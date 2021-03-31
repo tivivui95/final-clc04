@@ -1,6 +1,8 @@
-#include <iostream>
-using namespace std;
+#include "Header.h"
+
 int main() {
-    cout << "hello!" <<endl;
+    Node* head = nullptr;
+    Create(head);
+    Display(head);
     return 0;
 }
