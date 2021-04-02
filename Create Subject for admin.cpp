@@ -1,6 +1,6 @@
 #include "Header.h"
 
-void Create(Node*& head)
+void CreateSubject(Node*& head)
 {
 	int n, k;
 	cout << "Enter the number subject that you want to create: ";
