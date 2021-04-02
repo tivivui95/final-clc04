@@ -47,3 +47,4 @@ void Display(Node*& head)
 		trace = trace->next;
 	}
 }
+

@@ -5,6 +5,13 @@
 #include<string>
 using namespace std;
 
+class Student
+{
+    string Name, Student ID;
+    int No;
+
+};
+
 struct Node
 {
 	int num;
