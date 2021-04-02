@@ -5,7 +5,6 @@ int main() {
     Create(head);
     Display(head);
 
-
     return 0;
 
 }
