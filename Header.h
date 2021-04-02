@@ -5,11 +5,16 @@
 #include<string>
 using namespace std;
 
+struct Student
+{
+    string FirstName, LastName, StudentID, Gender, DoB;
+    int No, SocialID, SchoolYear;
+};
+
 struct Node
 {
-    string FirstName, LastName, Student ID, Gender, DoB;
-    int No, Social ID, SchoolYear;
 	int num;
+	string data;
 	Node* next;
 };
 void CreateSubject(Node*& head);

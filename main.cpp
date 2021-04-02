@@ -2,7 +2,7 @@
 
 int main() {
     Node* head = nullptr;
-    Create(head);
+    CreateSubject(head);
     Display(head);
 
     return 0;
