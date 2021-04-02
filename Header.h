@@ -7,7 +7,7 @@ using namespace std;
 
 class Student
 {
-    string Name, Student ID;
+    string Name, Student ID, gender;
     int No;
 
 };
