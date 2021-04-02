@@ -48,3 +48,15 @@ void Display(Node*& head)
 	}
 }
 
+void CreateSchoolYear(Node* &pHead)
+{
+    int n;
+    cout << "Enter the schoolyear that you want to create: "; cin >> n;
+    for (int i = 0; i <= 6; i++)
+    {
+        Node* schoolyear = new Node();
+        schoolyear->next = nullptr;
+        schoolyear->data = n;
+    }
+
+}

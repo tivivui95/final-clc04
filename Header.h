@@ -5,20 +5,14 @@
 #include<string>
 using namespace std;
 
-class Student
-{
-    string Name, Student ID, gender;
-    int No;
-
-};
-
 struct Node
 {
+    string FirstName, LastName, Student ID, Gender, DoB;
+    int No, Social ID, SchoolYear;
 	int num;
-	string name;
 	Node* next;
 };
-void Create(Node*& head);
+void CreateSubject(Node*& head);
 void Display(Node*& head);
 
 #endif
