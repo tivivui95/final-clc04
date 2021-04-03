@@ -34,3 +34,5 @@
 # For Visual Studio
 .vs/
 .git/
+.vscode/
+draft/
