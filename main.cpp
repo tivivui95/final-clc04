@@ -7,16 +7,18 @@ int main() {
     UIgrid_2_1_Long("1. Login", "2. Exit");    
     UILineLong();
     int input; cin >> input;
-    system("cls"); string loginId, Id, type; bool check;
-    LoginMain(loginId,Id,type,check);
-    // if ((input == 1) && data->check) 
-    // {
-    //     cout << data->LoginId.c_str() << endl;
-    //     cout << data->type.c_str() << endl;
-    // } else return 0;
-    // cout << data->LoginId.c_str() << endl;
-    // cout << data->type.c_str() << endl;
-    system("pause");
+    system("cls"); LoginM* data = nullptr;
+
+    if ((input == 1) && LoginMain(data)) 
+    {
+        system("cls");
+        cout << "Username: " << data->LoginId << endl;
+        cout << "id: " << data->id << endl;
+        cout << "You are " << data->type << endl;
+    } else return 0;
     // End login, Id of user located in data variable, you can use it by data.LoginId
+    UILineLong();
+    system("pause");
+    
     return 0;
 }

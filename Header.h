@@ -34,15 +34,16 @@ struct Node
 	string data;
 	Node* next;
 };
-// Login
+// Login struct
 struct LoginM
 {
 	string LoginId, id, type;
 	bool check;
 };
 // Login.cpp
-void LoginMain(string& loginId, string& Id, string& type, bool& check);
+bool LoginMain(LoginM* &dat);
 
+// Create subject for admin.cpp
 void CreateSubject(Node*& head);
 void CreateSchoolYear(Node*& pHead);
 void AddAndDisplayStudent(Node*& head);
@@ -52,7 +53,7 @@ void EditClassInfo(Node*& head2);
 void Navigation(int& choice);
 void Login(ifstream& f, string& k);
 
-// UI function
+// UI function in UI.cpp
 void UITitle(string input);
 void UILineLong();
 void UILineShort();
