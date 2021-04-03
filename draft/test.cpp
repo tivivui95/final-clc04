@@ -7,6 +7,9 @@ int main() {
     ifstream f;
     string a;
     f.open("text.txt");
-    f >> a; cout << a;
+    while (getline(f, a)) {
+        cout << a << endl;
+    }
+    f.close();
     return 0;
 }
