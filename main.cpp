@@ -2,8 +2,11 @@
 
 int main() {
     Node* head = nullptr;
-    CreateSubject(head);
-    Display(head);
+    fstream f;
+    Navigation(choice);
+
+   /* CreateSubject(head);
+    Display(head);*/
     // AddAndDisplayStudent(head);
     // CreateSchoolYear(head);
 

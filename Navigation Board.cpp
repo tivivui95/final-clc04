@@ -46,7 +46,7 @@ void Navigation(int& choice)
 
 void Login(ifstream& f, string& k)
 {
-	f.open("Data.txt", ios::in);
+	f.open("loginData.txt", ios::in);
 	if (f.is_open())
 		cout << "Ready to go.\n";
 	else
