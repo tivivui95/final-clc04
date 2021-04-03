@@ -23,6 +23,7 @@ void CreateSchoolYear(Node*& pHead);
 void AddAndDisplayStudent(Node*& head);
 void Display(Node*& head);
 void enroll(Node&* head);
+void EditClassInfo(Node*& head2);
 void Navigation(int& choice);
 void Login(ifstream& f, string& k);
 

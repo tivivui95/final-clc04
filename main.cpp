@@ -2,6 +2,7 @@
 
 int main() {
     Node* head = nullptr;
+    Node* head2 = nullptr;
     fstream f;
     Navigation(choice);
 
