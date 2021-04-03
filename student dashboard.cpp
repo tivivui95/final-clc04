@@ -20,6 +20,7 @@ void studentDashboard()
 
 void enroll(Node &*head)
 {
+	cout << " List of courses" << endl;
 	while (head != nullptr)
 	{
 		cout << head->num << ". " << head->name;
