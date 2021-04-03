@@ -17,3 +17,12 @@ void studentDashboard()
 	}
 		
 }
+
+void enroll(Node &*head)
+{
+	while (head != nullptr)
+	{
+		cout << head->num << ". " << head->name;
+		head = head->next;
+	}
+}
