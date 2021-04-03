@@ -1,0 +1,3 @@
+Username,password,ID(mssv/staffID),KeyValue(Staff/Student),
+nmvan,123456,0001,staff,
+20127094,123456,20127094,student,
