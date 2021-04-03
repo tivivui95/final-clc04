@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<string>
+#include<fstream>
 using namespace std;
 
 struct Student
@@ -19,5 +20,8 @@ struct Node
 };
 void CreateSubject(Node*& head);
 void Display(Node*& head);
+void enroll(Node&* head);
+void Navigation(int& choice);
+void Login(ifstream& f, string& k);
 
 #endif
