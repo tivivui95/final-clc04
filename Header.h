@@ -19,6 +19,8 @@ struct Node
 	Node* next;
 };
 void CreateSubject(Node*& head);
+void CreateSchoolYear(Node*& pHead);
+void AddAndDisplayStudent(Node*& head);
 void Display(Node*& head);
 void enroll(Node&* head);
 void Navigation(int& choice);
