@@ -2,7 +2,7 @@
 
 void UITitle(string input) {
     UILineLong();
-    cout << setw(60) << input << endl;
+    cout << setw(60) << input << flush << endl;
     UILineLong();
 }
 
@@ -36,12 +36,14 @@ void UIInput(string label) {
 
 void Loading() {
     system("cls");
-    for (int i = 0; i < 40; i++)
+    for (int i = 0; i < 50; i++)
     {
         UILineShort();
-        cout << setw(2) << i*2.5 << "%";
+        cout << "[";
+        cout << setw(5) << i*2 << "%" << "  ";
         for (int j = 0; j < i; j++) cout << "=";
-        cout << ">" << endl; UILineShort(); Sleep(20); system("cls");
+        for (int k = 50-i; k > 0; k--) cout << "-";
+        cout << "]" << endl; UILineShort(); Sleep(10); system("cls");
     }
     
 }

@@ -13,8 +13,8 @@ int main() {
     UILineLong();
     int input; UICin(input);
     system("cls"); LoginM* data = nullptr;
-
-    if ((input == 1) && LoginMain(data)) 
+    bool check = LoginMain(data);
+    if ((input == 1) && check) 
     {
         system("cls");
         Staff* CurS = new Staff;
@@ -23,7 +23,7 @@ int main() {
         ifstream f; string temp;
         f.open("OverallData/staffData.txt");
         getline(f, temp, '\n');
-        f.ignore(256,'\n');
+        // f.ignore(256,'\n');
         while(getline(f, temp,',')) 
             if (temp == data->LoginId) 
             { getline(f, CurS->FullName, ','); break; }

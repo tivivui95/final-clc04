@@ -1,8 +1,7 @@
 #include "Header.h"
 
-bool LoginMain(LoginM* &dat) {
-    LoginM* data = new LoginM;
-    dat = data;
+bool LoginMain(LoginM* &data) {
+    data = new LoginM;
     string username, password, temp;
     UITitle("LOGIN PAGE");
     UIInput("Username: "); cin >> username;
@@ -25,7 +24,7 @@ bool LoginMain(LoginM* &dat) {
             } 
             else 
             { 
-                f.close(); UITitle("Login Fail!"); Sleep(1000); 
+                data = nullptr; f.close(); UITitle("Login Fail!"); Sleep(1000); 
                 system("cls"); return LoginMain(data);
             }
         } 
