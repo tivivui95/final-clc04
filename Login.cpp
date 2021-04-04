@@ -22,9 +22,13 @@ bool LoginMain(LoginM* &dat) {
                 UITitle("Login Successful! You will be redirected shortly!");
                 Sleep(1500); 
                 return true;
-            } else { f.close(); UITitle("Login Fail!"); Sleep(1000); 
+            } 
+            else 
+            { 
+                f.close(); UITitle("Login Fail!"); Sleep(1000); 
                 system("cls"); return LoginMain(data);
             }
-        } else getline(f, temp, '\n');
+        } 
+        else getline(f, temp, '\n');
         f.close(); UITitle("Login Fail!"); Sleep(1000); system("cls"); return LoginMain(data);
 }
