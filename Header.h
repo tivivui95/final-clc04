@@ -40,6 +40,21 @@ struct LoginM
 	string LoginId, id, type;
 	bool check;
 };
+// Current Staff
+struct Stafftime
+{
+    string courseName, courseId, day1, time1, day2, time2;
+    Stafftime* Nextcourse;
+};
+struct Staff
+{
+    string FullName, Username, UserId;
+    Stafftime* Allcourse;
+};
+
+
+
+
 // Login.cpp
 bool LoginMain(LoginM* &dat);
 
@@ -53,12 +68,20 @@ void EditClassInfo(Node*& head2);
 void Navigation(int& choice);
 void Login(ifstream& f, string& k);
 
+// NavBar.cpp
+void DisplayNav(Staff*&data);
+
 // UI function in UI.cpp
 void UITitle(string input);
 void UILineLong();
 void UILineShort();
 void UIgrid_2_1_Long(string string1, string string2);
 void UIgrid_2_1_Short(string string1, string string2);
+void UIgrid_3_1_Long(string string1, string string2, string string3);
+void UIgrid_3_1_Short(string string1, string string2, string string3);
 void UIInput(string label);
 void Loading();
+int UICin(int& n);
+void UIgrid_1_1_Long(string string);
+void UIgrid_1_1_Short(string string);
 #endif
