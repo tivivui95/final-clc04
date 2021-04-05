@@ -28,6 +28,10 @@ bool LoginMain(LoginM* &data) {
                 system("cls"); return LoginMain(data);
             }
         } 
-        else getline(f, temp, '\n');
-        f.close(); UITitle("Login Fail!"); Sleep(1000); system("cls"); return LoginMain(data);
+        else 
+            getline(f, temp, '\n');
+        f.close(); UITitle("Login Fail!"); 
+        Sleep(1000); 
+        system("cls"); 
+        return LoginMain(data);
 }
