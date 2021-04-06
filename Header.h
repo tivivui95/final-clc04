@@ -70,6 +70,7 @@ void Login(ifstream& f, string& k);
 
 // NavBar.cpp
 void DisplayNav(Staff*&data);
+void NavProcess(int input);
 
 // UI function in UI.cpp
 void UITitle(string input);

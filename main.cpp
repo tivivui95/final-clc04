@@ -30,6 +30,7 @@ int main() {
             // cout << temp << flush << endl;
         f.close();
         DisplayNav(CurS);
+        UICin(input);
         // UILineLong();
         // UIgrid_3_1_Long("Username: " + data->LoginId,"id: " + data->id,"You are " + data->type);
         // cout << "id: " << data->id << endl;
