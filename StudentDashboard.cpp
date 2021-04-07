@@ -1,6 +1,6 @@
 #include "Header.h"
 
-void studentDashboard()
+void studentDashboard(Node *head)
 {
 	int choice;
 	cout << "1.Enroll\n";
@@ -11,6 +11,10 @@ void studentDashboard()
 	switch (choice)
 	{
 	case 1:
+	{
+		enroll(head);
+		break;
+	}
 	case 2:
 	case 3:
 	case 4:
@@ -20,11 +24,32 @@ void studentDashboard()
 
 void enroll(Node &*head)
 {
-	cout << " List of courses" << endl;
-	while (head != nullptr)
+	Node *cur=head;
+	cout << " List of courses\n";
+	while (cur != nullptr)
 	{
-		cout << head->num << ". " << head->name << "\n";
-		head = head->next;
+		cout << cur->num << ". " << cur->name << "\n";
+		cur = cur->next;
 	}
+	int t;
+	do 
+	{
+		Node *now = head;
+		cout <<"Which subject do you want to enroll?(Write the number,0 to stop): \n";
+		cin >> t;
+		while (now != nullptr)
+		{
+			if (now->num == t)
+			{
+				cout << "You successfully enroll the subject: " << now->subject << endl;
+			}
+			now = now ->next;
+		}
+
+	} while (t != 0);
 }
 
+void viewList(Node *head)
+{
+
+}
