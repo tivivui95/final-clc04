@@ -22,7 +22,7 @@ void studentDashboard(Node *head)
 		
 }
 
-void enroll(Node &*head)
+void enroll(Node *&head)
 {
 	Node *cur=head;
 	cout << " List of courses\n";
