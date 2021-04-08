@@ -9,8 +9,7 @@ int main() {
     // End Setting
 
     Node* head = nullptr;
-    Node* head2 = nullptr;
-    fstream f;
+    Node* k = NULL;
     // Navigation(choice);
 
    /* CreateSubject(head);

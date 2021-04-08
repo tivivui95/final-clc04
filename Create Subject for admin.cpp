@@ -84,7 +84,7 @@ void AddAndDisplayStudent(Node* &head)
 
 void EditClassInfo(Node*& head2)
 {
-	
+	int ceo;
 }
 
 
