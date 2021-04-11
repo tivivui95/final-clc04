@@ -56,7 +56,9 @@ struct Staff
 struct Course
 {
     string courseID, courseN, teacherName, dayPerform;
-    int daysOfW;
+    int daysOfWeek;
+    struct Student.FirstName;
+    struct Student.LastName;
 };
 
 
