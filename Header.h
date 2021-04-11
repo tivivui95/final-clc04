@@ -6,12 +6,13 @@
 #include<string>
 #include<fstream>
 #include <sstream>
-
 #include <Windows.h>
 #include <cstdlib>
 #include <stdlib.h>
 #include <windows.h>
 using namespace std;
+
+#define MaxStudent 50;
 // Setting accent, Don't change anything in this class, it's for Vietnamese character
 class MBuf: public std::stringbuf {
 public:
@@ -50,6 +51,12 @@ struct Staff
 {
     string FullName, Username, UserId;
     Stafftime* Allcourse;
+};
+
+struct Course
+{
+    string courseID, courseN, teacherName, dayPerform;
+    int daysOfW;
 };
 
 
