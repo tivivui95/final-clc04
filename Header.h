@@ -21,7 +21,7 @@ public:
         return 0;
     }
 };
-// Start here 
+// Start here
 struct Student
 {
     string FirstName, LastName, StudentID, Gender, DoB;

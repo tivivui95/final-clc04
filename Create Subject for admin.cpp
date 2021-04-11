@@ -19,7 +19,7 @@ void CreateSubject(Node*& head)
 
 		Node* subject = new Node;
 		subject->next = nullptr;
-		subject->name = t;
+		subject->data = t;
 		subject->num = k;
 
 		if (head == nullptr)
@@ -43,7 +43,7 @@ void Display(Node*& head)
 	cout << "--------------------------------------\n";
 	while (trace)
 	{
-		cout << trace->name << "\t" << trace->num << endl;
+		cout << trace->data << "\t" << trace->num << endl;
 		trace = trace->next;
 	}
 }
