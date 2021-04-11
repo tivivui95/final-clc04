@@ -72,6 +72,10 @@ void Login(ifstream& f, string& k);
 void DisplayNav(Staff*&data);
 void NavProcess(int input);
 
+// staffDashBoard.cpp
+void maindashboard(int input);
+void createNewYear();
+
 // UI function in UI.cpp
 void UITitle(string input);
 void UILineLong();
