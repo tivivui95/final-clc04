@@ -1,34 +1,47 @@
 #include "Header.h"
 
-void studentDashboard(Node *head)
+void studentDashboard(Node *head,int choice)
 {
-	int choice;
 	cout << "1.Enroll\n";
 	cout << "2.Manage Class\n ";
 	cout << "3.Manage course\n";
 	cout << "4.Manage score\n";
-	cin >> choice;
 	switch (choice)
 	{
 	case 1:
 	{
-		enroll(head);
-		break;
+		int a;
+		cout << "1. Enroll course\n";
+		cout << "2. View list of enroll course\n";
+		cout << "3. Remove course\n";
+		cin >> a;
+		switch (a)
+		case 1:
+		{
+			enroll(head);
+			break;
+		}
+		case 2:
+		{
+			viewList(head);
+		}
+
 	}
 	case 2:
+	{}
 	case 3:
 	case 4:
 	}
 		
 }
 
-void enroll(Node *&head)
+void enroll(Node &*head)
 {
 	Node *cur=head;
 	cout << " List of courses\n";
 	while (cur != nullptr)
 	{
-		cout << cur->num << ". " << cur->name << "\n";
+		cout << cur->num << ". " << cur->data << "\n";
 		cur = cur->next;
 	}
 	int t;
@@ -41,7 +54,7 @@ void enroll(Node *&head)
 		{
 			if (now->num == t)
 			{
-				cout << "You successfully enroll the subject: " << now->subject << endl;
+				cout << "You successfully enroll the subject: " << now->data << endl;
 			}
 			now = now ->next;
 		}
@@ -51,5 +64,5 @@ void enroll(Node *&head)
 
 void viewList(Node *head)
 {
-
+	
 }

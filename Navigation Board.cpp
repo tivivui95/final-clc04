@@ -59,7 +59,7 @@ void Login(ifstream& f, string& k)
 	}
 	else
 	{
-		cerr << "Error\n";
+		cout << "Error\n";
 		return;
 	}
 }

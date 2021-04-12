@@ -20,7 +20,8 @@ int main() {
         Staff* CurS = new Staff;
         CurS->UserId = data->id;
         CurS->Username = data->LoginId;
-        ifstream f; string temp;
+        ifstream f;
+        string temp;
         f.open("OverallData/staffData.txt");
         getline(f, temp, '\n');
         // f.ignore(256,'\n');
