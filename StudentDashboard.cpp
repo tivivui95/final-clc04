@@ -25,17 +25,20 @@ void studentDashboard(Node *head,int choice)
 		{
 			viewList(head);
 		}
+		case 3:
+		{
+			removecourse(head);
+		}
 
 	}
 	case 2:
-	{}
 	case 3:
 	case 4:
 	}
 		
 }
 
-void enroll(Node &*head)
+Node* enroll(Node &*head, Node &*subject)
 {
 	Node *cur=head;
 	cout << " List of courses\n";
@@ -55,14 +58,38 @@ void enroll(Node &*head)
 			if (now->num == t)
 			{
 				cout << "You successfully enroll the subject: " << now->data << endl;
+				subject = now;
 			}
 			now = now ->next;
 		}
-
 	} while (t != 0);
+	return subject;
 }
 
-void viewList(Node *head)
+void viewList(Node *subject)
 {
+	if (subject == nullptr) cout << "You havent enrolled any courses yet. Enroll first and come back here\n";
+	else
+	{
+		Node *cur = subject;
+	    cout << "The courses that you have alreay enrolled:\n ";
+	    while (cur != nullptr)
+	    {
+		    cout << cur->num << ". " << cur->data << " \n";
+	       	cur = cur->next;
+	    }
+	
+	}
+		
+}
+void removecourse(Node *subject)
+{
+	if (subject == nullptr) cout <<"There is no course to remove\n";
+	else
+	{
+		Node* temp = subject;
+		
+	}
+	
 	
 }
