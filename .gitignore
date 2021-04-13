@@ -38,3 +38,14 @@
 draft/
 debug/
 test/
+
+### CodeBlocks ###
+# specific to CodeBlocks IDE
+*.layout
+*.depend
+# generated directories
+bin/
+obj/
+# jobs.*
+*.cbp
+*.cscope_file_list
