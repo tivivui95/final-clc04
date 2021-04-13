@@ -19,7 +19,8 @@ void maindashboard(int input) {
         }
     case 3:
         {
-
+            DeleteSubject();
+            break;
         }
     
     default:
