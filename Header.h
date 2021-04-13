@@ -98,4 +98,7 @@ void Loading();
 int UICin(int& n);
 void UIgrid_1_1_Long(string string);
 void UIgrid_1_1_Short(string string);
+
+//Edit class
+
 #endif

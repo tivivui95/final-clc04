@@ -8,8 +8,19 @@ void maindashboard(int input) {
     switch (input)
     {
     case 1:
-        createNewYear();
-        break;
+        {
+            createNewYear();
+            break;
+        }
+    case 2:
+        {
+            AddNewSubject();
+            break;
+        }
+    case 3:
+        {
+
+        }
     
     default:
         break;
