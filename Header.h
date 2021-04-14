@@ -84,6 +84,8 @@ void NavProcess(int input);
 // staffDashBoard.cpp
 void maindashboard(int input);
 void createNewYear();
+void AddNewSubject(Node&head);
+void DeleteSubject(Node&head);
 
 // UI function in UI.cpp
 void UITitle(string input);
