@@ -1,6 +1,6 @@
 #include "Header.h"
 
-void studentDashboard(Node *head,int choice)
+void studentDashboard(Node *head,Node*subject,int choice)
 {
 	cout << "1.Enroll\n";
 	cout << "2.Manage Class\n ";
@@ -18,16 +18,18 @@ void studentDashboard(Node *head,int choice)
 		switch (a)
 		case 1:
 		{
-			enroll(head);
+			enroll(head,subject);
 			break;
 		}
 		case 2:
 		{
-			viewList(head);
+			viewList(head,subject);
+			break;
 		}
 		case 3:
 		{
-			removecourse(head);
+			removecourse(subject);
+			break;
 		}
 
 	}
@@ -66,9 +68,13 @@ Node* enroll(Node &*head, Node &*subject)
 	return subject;
 }
 
-void viewList(Node *subject)
+void viewList(Node *head,Node *subject)
 {
-	if (subject == nullptr) cout << "You havent enrolled any courses yet. Enroll first and come back here\n";
+	if (subject == nullptr) 
+	{
+		cout <<"You should enroll first\n";
+		enroll(head,subject);
+	}
 	else
 	{
 		Node *cur = subject;
@@ -84,7 +90,11 @@ void viewList(Node *subject)
 }
 void removecourse(Node *subject)
 {
-	if (subject == nullptr) cout <<"There is no course to remove\n";
+	if (subject == nullptr)
+	{
+		cout <<"You should enroll first\n";
+		enroll(head,subject);
+	}
 	else
 	{
 		Node* temp = subject;
