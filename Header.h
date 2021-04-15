@@ -61,6 +61,11 @@ struct Course
     struct Student.LastName;
 };
 
+struct Class
+{
+    string Name;
+};
+
 
 
 
