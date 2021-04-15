@@ -6,7 +6,7 @@ void DStoClass(int i)
     cout << "Student name: " << Student.FirstName << endl;
     if (i)
     {
-        cout << "Class: " << Class.Name << endl;
+        cout << "Class: " << Class.name << endl;
     }
 
 }

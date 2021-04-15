@@ -63,7 +63,8 @@ struct Course
 
 struct Class
 {
-    string Name;
+    string name;
+    struct Student;
 };
 
 
