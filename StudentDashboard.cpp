@@ -33,14 +33,11 @@ void studentDashboard(Node *head,Node*subject,int choice)
 		}
 
 	}
-	case 2:
-	case 3:
-	case 4:
 	}
 		
 }
 
-Node* enroll(Node &*head, Node &*subject)
+Node* enroll(Node *head, Node *subject)
 {
 	Node *cur=head;
 	cout << " List of courses\n";
@@ -84,22 +81,30 @@ void viewList(Node *head,Node *subject)
 		    cout << cur->num << ". " << cur->data << " \n";
 	       	cur = cur->next;
 	    }
-	
 	}
-		
 }
-void removecourse(Node *subject)
+
+void removecourse(Node*& head)
 {
-	if (subject == nullptr)
-	{
-		cout <<"You should enroll first\n";
-		enroll(head,subject);
-	}
-	else
-	{
-		Node* temp = subject;
-		
-	}
-	
-	
+    string x;
+    cout << "Enter an int: ";
+    cin.ignore();
+    getline(cin, x);
+    Node* tmp = head;
+    if (head->data == x)
+    {
+        Node* c = head;
+        head = head->next;
+        delete c;
+    }
+    while (tmp->next != nullptr)
+    {
+    if (tmp->next->data == x)
+        {
+            Node* k = tmp->next;
+            tmp->next = tmp->next->next;
+            delete k;
+        }
+    else tmp = tmp->next;
+    }
 }
