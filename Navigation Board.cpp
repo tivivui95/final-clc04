@@ -62,4 +62,4 @@ void Login(ifstream& f, string& k)
 		cout << "Error\n";
 		return;
 	}
-}
+}   
