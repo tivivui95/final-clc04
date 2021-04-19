@@ -1,8 +1,9 @@
 #include "Header.h"
 
 template <typename N>
-class NodeData
+class Classroom
 {
 public:
-    NodeData(): pnext
+    Classroom() { ; };
+    Classroom(string name, int no, int studentID, string gender, string DoB, int socialID);
 };

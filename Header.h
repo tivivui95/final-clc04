@@ -15,6 +15,19 @@ using namespace std;
 #define MaxStudent 50;
 // Setting accent, Don't change anything in this class, it's for Vietnamese character
 
+template <typename N>
+class NodeData
+{
+public:
+    NodeData(): next(NULL) { ; }
+    void setdata(N val) {data = val;}
+    N getdata() const {return data;}
+    void setnext(NodeData<N>* next) {pnext = next}
+    NodeData<N>* getnext() const {return pnext;}
+private:
+    N data;
+    NodeData<N>* pnext;
+};
 
 
 
