@@ -1,13 +1,8 @@
 #include "Header.h"
 
-void DStoClass(int i)
+template <typename N>
+class NodeData
 {
-    i = 1;
-    cout << "Student name: " << Student.FirstName << endl;
-    if (i)
-    {
-        cout << "Class: " << Class.name << endl;
-    }
-
-}
-
+public:
+    NodeData(): pnext
+};

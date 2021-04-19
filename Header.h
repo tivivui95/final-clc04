@@ -14,6 +14,10 @@ using namespace std;
 
 #define MaxStudent 50;
 // Setting accent, Don't change anything in this class, it's for Vietnamese character
+
+
+
+
 class MBuf: public std::stringbuf {
 public:
     int sync() {
