@@ -19,7 +19,7 @@ bool LoginMain(LoginM* &data) {
                 getline(f,temp,','); data->type=temp;
                 f.close(); Loading();
                 UITitle("Login Successful! You will be redirected shortly!");
-                Sleep(1500); 
+                Sleep(1000); 
                 return true;
             } 
             else 

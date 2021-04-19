@@ -29,6 +29,12 @@ struct Student
     int No, SocialID, SchoolYear;
 };
 
+struct LoginStudent
+{
+    string FullName, Username, UserId;
+    Student* Detail;
+};
+
 struct Node
 {
 	int num;

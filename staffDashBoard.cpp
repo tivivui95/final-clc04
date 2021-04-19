@@ -13,7 +13,7 @@ void DeleteSubject(Node*& head)
 {
     string x;
         cout << "Enter an int: ";
-        cin.ignore()
+        cin.ignore();
         getline(cin, x);
 
         Node* tmp = head;

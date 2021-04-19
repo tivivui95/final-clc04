@@ -11,27 +11,12 @@ int main() {
     UITitle("Welcome to HCMUS Portal!");
     UIgrid_2_1_Long("1. Login", "2. Exit");    
     UILineLong();
-    int input; UICin(input);
+    int input; UICin(input); // End Display
     system("cls"); LoginM* data = nullptr;
-    bool check = LoginMain(data);
-    if ((input == 1) && check) 
+    if ((input == 1) && LoginMain(data)) // Check Login
     {
         system("cls");
-        Staff* CurS = new Staff;
-        CurS->UserId = data->id;
-        CurS->Username = data->LoginId;
-        ifstream f;
-        string temp;
-        f.open("OverallData/staffData.txt");
-        getline(f, temp, '\n');
-        // f.ignore(256,'\n');
-        while(getline(f, temp,',')) 
-            if (temp == data->LoginId) 
-            { getline(f, CurS->FullName, ','); break; }
-            // cout << temp << flush << endl;
-        f.close();
-        DisplayNav(CurS);
-        UICin(input);
+        if (data->type=="staff") staffDbView(data); else if (data->type=="student") studentDbView(data); else return 0;
         // UILineLong();
         // UIgrid_3_1_Long("Username: " + data->LoginId,"id: " + data->id,"You are " + data->type);
         // cout << "id: " << data->id << endl;
@@ -40,6 +25,31 @@ int main() {
     // End login, Id of user located in data variable, you can use it by data.LoginId
     // UILineLong();
     system("pause");
-    
     return 0;
+}
+
+void staffDbView(LoginM* data) {
+    int input;
+    Staff* CurS = new Staff;
+    CurS->UserId = data->id;
+    CurS->Username = data->LoginId;
+    ifstream f;
+    string temp;
+    f.open("OverallData/staffData.txt");
+    getline(f, temp, '\n');
+    // f.ignore(256,'\n');
+    while(getline(f, temp,',')) 
+        if (temp == data->LoginId) 
+        { getline(f, CurS->FullName, ','); break; }
+        // cout << temp << flush << endl;
+    f.close();
+    DisplayNav(CurS);
+    UICin(input);
+}
+
+void studentDbView(LoginM* data) {
+    int input;
+    LoginStudent* LStu;
+    LStu->UserId = data->id;
+    LStu->Username = data->LoginId;
 }
