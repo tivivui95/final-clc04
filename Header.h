@@ -29,6 +29,7 @@ private:
     NodeData<N>* pnext;
 };
 
+class LinkedList
 
 
 class MBuf: public std::stringbuf {
