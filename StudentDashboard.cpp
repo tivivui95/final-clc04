@@ -16,21 +16,49 @@ void studentDashboard(Node *head,Node*subject,int choice)
 		cout << "3. Remove course\n";
 		cin >> a;
 		switch (a)
-		case 1:
 		{
+			case 1:
+			{
 			enroll(head,subject);
 			break;
-		}
+		    }
 		case 2:
-		{
+		    {
 			viewList(head,subject);
 			break;
-		}
+		    }
 		case 3:
-		{
+		    {
 			removecourse(subject);
 			break;
+		    }
 		}
+		break;
+	}
+	case 2:
+	{
+		int b;
+		cout << "1.View list of class\n";
+		cout << "2.View list of student in class\n";
+		cin >> b;
+		switch(b)
+		{
+			case 1:
+			{
+				viewListOfClass(subject);
+		        break;
+			}
+			case 2:
+			{
+
+				break;
+			}
+
+		}
+
+	}
+	case 3:
+	{
 
 	}
 	}
@@ -62,7 +90,7 @@ Node* enroll(Node *head, Node *subject)
 			now = now ->next;
 		}
 	} while (t != 0);
-	return subject;
+
 }
 
 void viewList(Node *head,Node *subject)
@@ -84,17 +112,17 @@ void viewList(Node *head,Node *subject)
 	}
 }
 
-void removecourse(Node*& head)
+void removecourse(Node*& subject)
 {
     string x;
     cout << "Enter an int: ";
     cin.ignore();
     getline(cin, x);
-    Node* tmp = head;
-    if (head->data == x)
+    Node* tmp = subject;
+    if (subject->data == x)
     {
-        Node* c = head;
-        head = head->next;
+        Node* c = subject;
+        subject = subject->next;
         delete c;
     }
     while (tmp->next != nullptr)
@@ -107,4 +135,28 @@ void removecourse(Node*& head)
         }
     else tmp = tmp->next;
     }
+
+}
+
+void viewListOfClass(Node*subject)
+{
+	if(subject == nullptr) cout << "There is no subject in here";
+	else{
+		Node *cur = subject;
+		cout << "List of classes:\n";
+	    while (cur != nullptr)
+	    {
+		    cout << cur->num << ". " << cur->data << " \n";
+	       	cur = cur->next;
+	    }
+	}
+}
+
+void viewListofStudentinClass(Class course,Node *subject)
+{
+	string s;
+	viewListOfClass(subject);
+	cout << "Which class do you want to show students? ";
+	cin.ignore();
+	getline(cin,s);
 }
