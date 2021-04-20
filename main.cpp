@@ -43,7 +43,7 @@ void staffDbView(LoginM* data) {
         { getline(f, CurS->FullName, ','); break; }
         // cout << temp << flush << endl;
     f.close();
-    DisplayNav(CurS);
+    DisplayNavStaff(CurS);
     UICin(input);
 }
 
@@ -52,4 +52,31 @@ void studentDbView(LoginM* data) {
     LoginStudent* LStu;
     LStu->UserId = data->id;
     LStu->Username = data->LoginId;
+    LStu->Detail = new Student;
+    cout << "?"; system("pause");
+    ifstream kclass;
+    kclass.open(LStu->UserId[0] + LStu->UserId[1] +"/class.txt");
+    string tempc;
+    do
+    {
+        kclass >> tempc;
+        ifstream classCur;
+        classCur.open(LStu->UserId[0] + LStu->UserId[1] + "/classData/" + tempc + ".txt");
+        int num; classCur >> num;
+        for (int i = 0; i < num; i++) {
+            getline(classCur, tempc, ',');
+            LStu->Detail->No = stoi(tempc);
+            getline(classCur,tempc,',');
+            getline(classCur,LStu->FullName,',');
+            getline(classCur,LStu->Detail->DoB,',');
+            getline(classCur,LStu->Detail->Gender,',');
+            if (tempc==LStu->UserId) break;
+        }
+        cout << tempc << flush << endl;
+        classCur.close();
+    } while (tempc!=LStu->UserId);
+    DisplayNavStudent(LStu);
+    UICin(input);
+    kclass.close();
+
 }

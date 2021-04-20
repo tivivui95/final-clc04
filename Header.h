@@ -43,7 +43,7 @@ public:
 // Start here
 struct Student
 {
-    string FirstName, LastName, StudentID, Gender, DoB;
+    string FullName, StudentID, Gender, DoB;
     int No, SocialID, SchoolYear;
 };
 
@@ -81,8 +81,8 @@ struct Course
 {
     string courseID, courseN, teacherName, dayPerform;
     int daysOfWeek;
-    struct Student.FirstName;
-    struct Student.LastName;
+    // struct Student.FirstName;
+    // struct Student.LastName;
 };
 
 struct Class
@@ -108,8 +108,11 @@ void Navigation(int& choice);
 void Login(ifstream& f, string& k);
 
 // NavBar.cpp
-void DisplayNav(Staff*&data);
+void DisplayNavStaff(Staff*&data);
 void NavProcess(int input);
+void DisplayNavStudent(LoginStudent* LStu);
+void studentDbView(LoginM* data);
+void staffDbView(LoginM* data);
 
 // staffDashBoard.cpp
 void maindashboard(int input);
