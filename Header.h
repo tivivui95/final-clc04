@@ -22,29 +22,29 @@ public:
     Person(string name, int No, bool gender, int studentID, int socialID, string DoB);
     ~Person() { ; };
     void operator =(Person& p);
-    string get_name() const { return name; }
-    int get_age() const { return age; }
-    bool get_sex() const { return gender; }
-    int get_studentID() const { return studentID; }
-    int get_socialID() const { return socialID; }
-    string get_DoB() const { return DoB; }
+    string get_name() const { return name_; }
+    int get_No() const { return No_; }
+    bool get_gender() const { return gender_; }
+    int get_studentID() const { return studentID_; }
+    int get_socialID() const { return socialID_; }
+    string get_DoB() const { return DoB_; }
 
     void ShowInfo()
     {
-        cout << "Name: " << name.c_str();
-        cout << "No: " << No;
-        cout << "Gender: " << ((gender == 1) ? "Male" : "Female");
-        cout << "Student ID: " << studentID;
-        cout << "Social ID: " << socialID;
-        cout << "Date of Birth: " << DoB.c_str();
+        cout << "Name: " << name_.c_str();
+        cout << "No: " << No_;
+        cout << "Gender: " << ((gender_ == 1) ? "Male" : "Female");
+        cout << "Student ID: " << studentID_;
+        cout << "Social ID: " << socialID_;
+        cout << "Date of Birth: " << DoB_.c_str();
 
     }
 private:
-    string name;
-    string DoB;
-    int No;
-    bool gender;
-    int studentID, socialID;
+    string name_;
+    string DoB_;
+    int No_;
+    bool gender_;
+    int studentID, socialID_;
 };
 
 
