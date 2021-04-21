@@ -165,6 +165,7 @@ void UIgrid_1_1_Long(string string);
 void UIgrid_1_1_Short(string string);
 
 //Score calculation
-
-
+double GPA(int score_earn, int total credit);
+bool Sort(double average_score, double GPA);
+double Average score(int score);
 #endif
