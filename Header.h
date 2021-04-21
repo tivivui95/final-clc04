@@ -15,21 +15,37 @@ using namespace std;
 #define MaxStudent 50;
 // Setting accent, Don't change anything in this class, it's for Vietnamese character
 
-template <typename N>
-class NodeData
+class Person
 {
 public:
-    NodeData(): next(NULL) { ; }
-    void setdata(N val) {data = val;}
-    N getdata() const {return data;}
-    void setnext(NodeData<N>* next) {pnext = next}
-    NodeData<N>* getnext() const {return pnext;}
-private:
-    N data;
-    NodeData<N>* pnext;
-};
+    Person() { ; };
+    Person(string name, int No, bool gender, int studentID, int socialID, string DoB);
+    ~Person() { ; };
+    void operator =(Person& p);
+    string get_name() const { return name; }
+    int get_age() const { return age; }
+    bool get_sex() const { return gender; }
+    int get_studentID() const { return studentID; }
+    int get_socialID() const { return socialID; }
+    string get_DoB() const { return DoB; }
 
-class LinkedList
+    void ShowInfo()
+    {
+        cout << "Name: " << name.c_str();
+        cout << "No: " << No;
+        cout << "Gender: " << ((gender == 1) ? "Male" : "Female");
+        cout << "Student ID: " << studentID;
+        cout << "Social ID: " << socialID;
+        cout << "Date of Birth: " << DoB.c_str();
+
+    }
+private:
+    string name;
+    string DoB;
+    int No;
+    bool gender;
+    int studentID, socialID;
+};
 
 
 class MBuf: public std::stringbuf {
