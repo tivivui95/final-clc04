@@ -147,10 +147,9 @@ void staffDbView(LoginM* data);
 
 // staffDashBoard.cpp
 void maindashboard(int input);
-void createNewYear();
-void AddNewSubject(Node&head);
-void DeleteSubject(Node&head);
-
+void AddNewSubject(Node*&head);
+void DeleteSubject(Node*&head);
+void CreateSchoolYear(Node*& pHead);
 // UI function in UI.cpp
 void UITitle(string input);
 void UILineLong();

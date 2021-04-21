@@ -1,18 +1,34 @@
 #include "Header.h"
 
-void createNewYear() {
-
-}
-
-void AddNewSubject()
+void AddNewSubject(Node*&head)
 {
+    string name;
+    Node* NewSubject = new Node;
+    cout << "enter subject's name: ";
+    getline(cin, name);
+    int x;
+    cout << "enter credits: ";
+    cin >> x;
+    NewSubject->data = name;
+    NewSubject->num = x;
+    Node* ptr;
+    if (head == nullptr)
+        head = NewSubject;
+    else
+    {
+        ptr = head;
 
+        while (ptr->next != nullptr)
+            ptr = ptr->next;
+
+        ptr->next = NewSubject;
+    }
 }
 
 void DeleteSubject(Node*& head)
 {
     string x;
-        cout << "Enter an int: ";
+        cout << "Enter name subject that u want to delete: ";
         cin.ignore();
         getline(cin, x);
 
@@ -44,7 +60,7 @@ void maindashboard(int input, Node&head) {
     {
     case 1:
         {
-            createNewYear();
+        CreateSchoolYear(pHead);
             break;
         }
     case 2:

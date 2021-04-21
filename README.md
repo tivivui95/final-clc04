@@ -8,7 +8,7 @@ Final for KTLT CLC04
 -NavBar - In-process
 
 ## Hung
--Edit Classess - In-process
+-Edit Classess - done
 
 ## Nguyen
 
