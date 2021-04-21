@@ -65,7 +65,7 @@ void studentDashboard(Node *head,Node*subject,int choice)
 		
 }
 
-Node* enroll(Node *head, Node *subject)
+Node* enroll(Node *head,ofstream student)
 {
 	Node *cur=head;
 	cout << " List of courses\n";
@@ -85,7 +85,7 @@ Node* enroll(Node *head, Node *subject)
 			if (now->num == t)
 			{
 				cout << "You successfully enroll the subject: " << now->data << endl;
-				subject = now;
+				student << now->data << endl;
 			}
 			now = now ->next;
 		}

@@ -41,11 +41,6 @@ public:
     }
 };
 // Start here
-struct Student
-{
-    string FullName, StudentID, Gender, DoB;
-    int No, SocialID, SchoolYear;
-};
 
 struct LoginStudent
 {
@@ -88,7 +83,12 @@ struct Course
 struct Class
 {
     string name;
-    struct Student;
+    struct Student student;
+};
+struct Student
+{
+    string FullName, StudentID, Gender, DoB;
+    int No, SocialID, SchoolYear;
 };
 
 
