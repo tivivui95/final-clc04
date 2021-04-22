@@ -18,4 +18,4 @@ void Person::operator = (Person& p)
     this->DoB_ = p.DoB_;
     this->studentID_ = p.studentID_;
     this->socialID_ = p.socialID_;
-}
+};
