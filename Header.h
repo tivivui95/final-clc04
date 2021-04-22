@@ -36,7 +36,7 @@ struct LoginStudent
 struct Node
 {
 	int num;
-	string data;
+	char data;
 	Node* next;
 };
 // Login struct
@@ -85,7 +85,7 @@ bool LoginMain(LoginM* &dat);
 // Create subject for admin.cpp
 void CreateSubject(Node*& head);
 void CreateSchoolYear(Node*& pHead);
-void AddAndDisplayStudent(Node*& head);
+void AddStudent(Node* &pHead);
 void Display(Node*& head);
 // void enroll(Node&* head);
 void EditClassInfo(Node*& head2);
