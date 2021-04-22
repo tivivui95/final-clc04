@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <vector>
 using namespace std;
-
 
 struct Node
 {
@@ -10,6 +10,16 @@ struct Node
     char data;
     Node* next;
 };
+
+bool writeRecord2File(string file_name, string field_1, string field_2, string field_3, string field_4, string field_5, string field_6)
+{
+    ofstream file;
+    file.open(file_name, ios::app);
+    file << field_1 << "," << field_2 << "," << field_3 << "," << field_4 << "," << field_5 << "," << field_6 << endl;
+    file.close();
+
+    return true;
+}
 
 
 
@@ -61,14 +71,14 @@ int main()
     pHead = s2ll(text, pHead);
 
     cout << "Linked list: ";
-    display(pHead);*/
+    display(pHead);
 
     ofstream f;
     f.open("E:/Data_Bin/20127261_KTLT/Final_TH/final-clc04/20/classData/20clc01/nguyen.txt");
 
-    for (int i = 0; i < 20; i++)
-    {
-        f << i << "," << i*i << endl;
-    }
+    f << text << endl;*/
+
+    bool write2file = writeRecord2File("E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\classData\\20clc01\\yahoo.txt", "1", "Nguyen Khoi Nguyen", "20127261", "123456789", "Nam", "08/11/2002");
+
     return 0;
 }
