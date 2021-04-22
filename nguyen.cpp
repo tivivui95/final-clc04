@@ -22,12 +22,10 @@ bool writeRecord2File(string file_name, string field_1, string field_2, string f
 }
 
 
-
-
 string input()
 {
     string t;
-    cout<<"Enter name: ";
+    cout<<"Enter data: ";
     getline(cin, t);
     return t;
 }
@@ -78,7 +76,13 @@ int main()
 
     f << text << endl;*/
 
-    bool write2file = writeRecord2File("E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\classData\\20clc01\\yahoo.txt", "1", "Nguyen Khoi Nguyen", "20127261", "123456789", "Nam", "08/11/2002");
+    string text1 = input();
+    string text2 = input();
+    string text3 = input();
+    string text4 = input();
+    string text5 = input();
+    string text6 = input();
+    bool write2file = writeRecord2File("E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\classData\\20clc01\\yahoo.txt", text1, text2, text3, text4, text5, text6);
 
     return 0;
 }
