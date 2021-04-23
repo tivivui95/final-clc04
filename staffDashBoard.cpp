@@ -55,7 +55,7 @@ void DeleteSubject(Node*& head)
         }
 }
 
-void maindashboard(int input, Node&head) {
+void maindashboard(int input, Node*head) {
     switch (input)
     {
     case 1:

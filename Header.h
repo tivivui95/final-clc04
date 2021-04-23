@@ -36,7 +36,7 @@ struct LoginStudent
 struct Node
 {
 	int num;
-	char data;
+	string data;
 	Node* next;
 };
 // Login struct
