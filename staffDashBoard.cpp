@@ -110,3 +110,15 @@ void maindashboard(int input, Node*& head)
         break;
     }
 }
+
+void Display(Node*& head, ofstream& Subject_file)
+{
+    Node* trace = head;
+
+    while (trace)
+    {
+        Subject_file << trace->data << endl;
+        Subject_file << trace->num << endl;
+        trace = trace->next;
+    }
+}

@@ -83,10 +83,8 @@ struct Student
 bool LoginMain(LoginM* &dat);
 
 // Create subject for admin.cpp
-void CreateSubject(Node*& head);
 void CreateSchoolYear(Node*& pHead);
 void AddStudent(Node* &pHead);
-void Display(Node*& head);
 // void enroll(Node&* head);
 void EditClassInfo(Node*& head2);
 void Navigation(int& choice);
@@ -100,10 +98,12 @@ void studentDbView(LoginM* data);
 void staffDbView(LoginM* data);
 
 // staffDashBoard.cpp
-void maindashboard(int input);
+void CreateSubject(Node*& head);
+void maindashboard(int input, Node*& head);
 void AddNewSubject(Node*&head);
 void DeleteSubject(Node*&head);
 void CreateSchoolYear(Node*& pHead);
+void Display(Node*& head, ofstream& Subject_file);
 // UI function in UI.cpp
 void UITitle(string input);
 void UILineLong();
