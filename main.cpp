@@ -24,6 +24,29 @@ int main() {
     } else return 0;
     // End login, Id of user located in data variable, you can use it by data.LoginId
     // UILineLong();
+
+
+    // for create subject.
+    Node* head = NULL;
+    int input;
+    char ch;
+    CreateSubject(head);
+    do
+    {
+        cout << "Enter your choice(1-2): ";
+        cin >> input;
+        maindashboard(input, head);
+        cout << "Do u continue to change sth?(Y/N): ";
+        cin >> ch;
+    } while (ch == 'y' || ch == 'Y');
+
+    ofstream Subject_file;
+    Subject_file.open("Subject List.txt", ios::trunc);
+    Display(head, Subject_file);
+    Subject_file.close();
+
+
+
     system("pause");
     return 0;
 }
@@ -78,5 +101,4 @@ void studentDbView(LoginM* data) {
     DisplayNavStudent(LStu);
     UICin(input);
     kclass.close();
-
 }
