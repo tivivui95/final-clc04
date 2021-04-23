@@ -1,6 +1,6 @@
 #include "Header.h"
 
-void studentDashboard(Node *head,Node*subject,int choice)
+void studentDashboard(Node* head, fstream &student,fstream &lop, Student info, int choice)
 {
 	cout << "1.Enroll\n";
 	cout << "2.Manage Class\n ";
@@ -17,21 +17,21 @@ void studentDashboard(Node *head,Node*subject,int choice)
 		cin >> a;
 		switch (a)
 		{
-			case 1:
-			{
-			enroll(head,subject);
+		case 1:
+		{
+			enroll(head,lop, student, info);
 			break;
-		    }
+		}
 		case 2:
-		    {
-			viewList(head,subject);
+		{
+			viewList(lop);
 			break;
-		    }
+		}
 		case 3:
-		    {
-			removecourse(subject);
+		{
+			removecourse(head);
 			break;
-		    }
+		}
 		}
 		break;
 	}
@@ -41,33 +41,31 @@ void studentDashboard(Node *head,Node*subject,int choice)
 		cout << "1.View list of class\n";
 		cout << "2.View list of student in class\n";
 		cin >> b;
-		switch(b)
+		switch (b)
 		{
-			case 1:
-			{
-				viewListOfClass(subject);
-		        break;
-			}
-			case 2:
-			{
-
-				break;
-			}
-
+		case 1:
+		{
+			viewListOfClass(lop);
+			break;
 		}
-
+		case 2:
+		{
+			viewListofStudentinClass(student);
+			break;
+		}
+		}
 	}
 	case 3:
 	{
 
 	}
 	}
-		
+
 }
 
-Node* enroll(Node *head,ofstream student)
+Node* enroll(Node* head, fstream &lop, fstream &student, Student info)
 {
-	Node *cur=head;
+	Node* cur = head;
 	cout << " List of courses\n";
 	while (cur != nullptr)
 	{
@@ -75,88 +73,77 @@ Node* enroll(Node *head,ofstream student)
 		cur = cur->next;
 	}
 	int t;
-	do 
+	do
 	{
-		Node *now = head;
-		cout <<"Which subject do you want to enroll?(Write the number,0 to stop): \n";
+		Node* now = head;
+		cout << "Which subject do you want to enroll?(Write the number,0 to stop): \n";
 		cin >> t;
 		while (now != nullptr)
 		{
 			if (now->num == t)
 			{
 				cout << "You successfully enroll the subject: " << now->data << endl;
-				student << now->data << endl;
+				student << info.FullName << endl;
+				lop << now->num << "," << now->data << endl;
 			}
-			now = now ->next;
+			now = now->next;
 		}
 	} while (t != 0);
 
 }
 
-void viewList(Node *head,Node *subject)
+void viewList(fstream &lop)
 {
-	if (subject == nullptr) 
+	string data;
+	while (!lop.eof())
 	{
-		cout <<"You should enroll first\n";
-		enroll(head,subject);
-	}
-	else
-	{
-		Node *cur = subject;
-	    cout << "The courses that you have alreay enrolled:\n ";
-	    while (cur != nullptr)
-	    {
-		    cout << cur->num << ". " << cur->data << " \n";
-	       	cur = cur->next;
-	    }
+		getline(lop, data, ',');
+		cout << data << endl;
 	}
 }
 
 void removecourse(Node*& subject)
 {
-    string x;
-    cout << "Enter an int: ";
-    cin.ignore();
-    getline(cin, x);
-    Node* tmp = subject;
-    if (subject->data == x)
-    {
-        Node* c = subject;
-        subject = subject->next;
-        delete c;
-    }
-    while (tmp->next != nullptr)
-    {
-    if (tmp->next->data == x)
-        {
-            Node* k = tmp->next;
-            tmp->next = tmp->next->next;
-            delete k;
-        }
-    else tmp = tmp->next;
-    }
+	string x;
+	cout << "Enter an int: ";
+	cin.ignore();
+	getline(cin, x);
+	Node* tmp = subject;
+	if (subject->data == x)
+	{
+		Node* c = subject;
+		subject = subject->next;
+		delete c;
+	}
+	while (tmp->next != nullptr)
+	{
+		if (tmp->next->data == x)
+		{
+			Node* k = tmp->next;
+			tmp->next = tmp->next->next;
+			delete k;
+		}
+		else tmp = tmp->next;
+	}
 
 }
 
-void viewListOfClass(Node*subject)
+void viewListOfClass(fstream &lop)
 {
-	if(subject == nullptr) cout << "There is no subject in here";
-	else{
-		Node *cur = subject;
-		cout << "List of classes:\n";
-	    while (cur != nullptr)
-	    {
-		    cout << cur->num << ". " << cur->data << " \n";
-	       	cur = cur->next;
-	    }
+	string data;
+	while (!lop.eof())
+	{
+		getline(lop,data,',');
+		cout << data << endl;
 	}
 }
 
-void viewListofStudentinClass(Class course,Node *subject)
+void viewListofStudentinClass(fstream &student)
 {
-	string s;
-	viewListOfClass(subject);
-	cout << "Which class do you want to show students? ";
-	cin.ignore();
-	getline(cin,s);
+	string line;
+	while (!student.eof())
+	{
+		getline(student, line);
+		cout << line << endl;
+	}
 }
