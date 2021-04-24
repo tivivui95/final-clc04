@@ -47,6 +47,7 @@ void AddNewSubject(Node*& head)
     cin >> x;
     NewSubject->data = name;
     NewSubject->num = x;
+    NewSubject->next = nullptr;
     Node* ptr;
     if (head == nullptr)
         head = NewSubject;
@@ -80,9 +81,9 @@ void DeleteSubject(Node*& head)
     {
         if (tmp->next->data == x)
         {
-            Node* k = tmp->next;
+            Node* c = tmp->next;
             tmp->next = tmp->next->next;
-            delete k;
+            delete c;
         }
         else
         {
