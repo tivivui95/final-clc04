@@ -27,11 +27,7 @@ public:
 };
 // Start here
 
-struct LoginStudent
-{
-    string FullName, Username, UserId;
-    Student* Detail;
-};
+
 
 struct Node
 {
@@ -64,19 +60,24 @@ struct Course
     // struct Student.FirstName;
     // struct Student.LastName;
 };
-
-struct Class
-{
-    string name;
-    struct Student student;
-};
 struct Student
 {
     string FullName, StudentID, Gender, DoB;
     int No, SocialID, SchoolYear;
 };
 
+struct Class
+{
+    string name;
+    Student student;
+};
 
+
+struct LoginStudent
+{
+    string FullName, Username, UserId;
+    Student* Detail;
+};
 
 
 // Login.cpp
@@ -96,6 +97,14 @@ void NavProcess(int input);
 void DisplayNavStudent(LoginStudent* LStu);
 void studentDbView(LoginM* data);
 void staffDbView(LoginM* data);
+
+// Student Dashboard 
+void viewList(fstream &lop);
+void removecourse(Node*& subject);
+void viewListOfClass(fstream &lop);
+void viewListofStudentinClass(fstream &student);
+Node* enroll(Node* head, fstream &lop, fstream &student, Student info);
+void studentDashboard(Node* head, fstream &student,fstream &lop, Student info, int choice);
 
 // staffDashBoard.cpp
 void CreateSubject(Node*& head);
@@ -119,7 +128,7 @@ void UIgrid_1_1_Long(string string);
 void UIgrid_1_1_Short(string string);
 
 //Score calculation
-double GPA(int score_earn, int total credit);
+// double GPA(int score_earn, int total credit);
 bool Sort(double average_score, double GPA);
-double Average score(int score);
+// double Average score(int score);
 #endif

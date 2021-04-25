@@ -16,7 +16,9 @@ int main() {
     if ((input == 1) && LoginMain(data)) // Check Login
     {
         system("cls");
-        if (data->type=="staff") staffDbView(data); else if (data->type=="student") studentDbView(data); else return 0;
+        if (data->type=="staff") staffDbView(data); 
+        else if (data->type=="student") studentDbView(data); 
+        else return 0;
         // UILineLong();
         // UIgrid_3_1_Long("Username: " + data->LoginId,"id: " + data->id,"You are " + data->type);
         // cout << "id: " << data->id << endl;
@@ -28,7 +30,7 @@ int main() {
 
     // for create subject.
     Node* head = NULL;
-    int input;
+    // int input;
     char ch;
     CreateSubject(head);
     do
@@ -77,28 +79,28 @@ void studentDbView(LoginM* data) {
     LStu->Username = data->LoginId;
     LStu->Detail = new Student;
     cout << "?"; system("pause");
-    ifstream kclass;
-    kclass.open(LStu->UserId[0] + LStu->UserId[1] +"/class.txt");
-    string tempc;
-    do
-    {
-        kclass >> tempc;
-        ifstream classCur;
-        classCur.open(LStu->UserId[0] + LStu->UserId[1] + "/classData/" + tempc + ".txt");
-        int num; classCur >> num;
-        for (int i = 0; i < num; i++) {
-            getline(classCur, tempc, ',');
-            LStu->Detail->No = stoi(tempc);
-            getline(classCur,tempc,',');
-            getline(classCur,LStu->FullName,',');
-            getline(classCur,LStu->Detail->DoB,',');
-            getline(classCur,LStu->Detail->Gender,',');
-            if (tempc==LStu->UserId) break;
-        }
-        cout << tempc << flush << endl;
-        classCur.close();
-    } while (tempc!=LStu->UserId);
+    // ifstream kclass;
+    // kclass.open(LStu->UserId[0] + LStu->UserId[1] +"/class.txt");
+    // string tempc;
+    // do
+    // {
+    //     kclass >> tempc;
+    //     ifstream classCur;
+    //     classCur.open(LStu->UserId[0] + LStu->UserId[1] + "/classData/" + tempc + ".txt");
+    //     int num; classCur >> num;
+    //     for (int i = 0; i < num; i++) {
+    //         getline(classCur, tempc, ',');
+    //         LStu->Detail->No = stoi(tempc);
+    //         getline(classCur,tempc,',');
+    //         getline(classCur,LStu->FullName,',');
+    //         getline(classCur,LStu->Detail->DoB,',');
+    //         getline(classCur,LStu->Detail->Gender,',');
+    //         if (tempc==LStu->UserId) break;
+    //     }
+    //     cout << tempc << flush << endl;
+    //     classCur.close();
+    // } while (tempc!=LStu->UserId);
     DisplayNavStudent(LStu);
     UICin(input);
-    kclass.close();
+    // kclass.close();
 }
