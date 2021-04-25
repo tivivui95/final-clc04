@@ -10,6 +10,7 @@
 #include <cstdlib>
 #include <stdlib.h>
 #include <windows.h>
+#include <cstring>
 using namespace std;
 
 #define MaxStudent 50;
