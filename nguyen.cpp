@@ -11,11 +11,25 @@ struct Node
     Node* next;
 };
 
+void readCSV(ifstream &f)
+{
+     ifstream f("E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\classData\\20clc01\\nguyen.csv")
+     if (!f.is_open()) cout << "ERROR !!!" << '\n';
+
+     string fullname;
+     string gender;
+     string socialID;
+     string studentID;
+     string DoB;
+     string No;
+
+}
+
 bool writeRecord2File(string file_name, string field_1, string field_2, string field_3, string field_4, string field_5, string field_6)
 {
     ofstream file;
     file.open(file_name, ios::app);
-    file << field_1 << "," << field_2 << "," << field_3 << "," << field_4 << "," << field_5 << "," << field_6 << endl;
+    file << field_1 << "," << field_2 << ", " << field_3 << ", " << field_4 << ", " << field_5 << ", " << field_6 << endl;
     file.close();
 
     return true;
