@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <cstring>
 #include <Windows.h>
 using namespace std;
 class MBuf: public std::stringbuf {
@@ -20,10 +21,23 @@ int main() {
     std::cout.rdbuf( &buf );
     ifstream f;
     f.open("import/20clc01.csv");
-    string temp;
-    while (getline(f, temp, ','))
+    string temp = "temp";
+    f.ignore(1,'\n');
+    while (temp!="")
     {
-        cout << temp << flush << endl;
+        getline(f, temp, '\n');
+        getline(f, temp, ',');
+        cout << "No: " << temp << flush << endl;
+        getline(f, temp, ',');
+        cout << "SID: " << temp << flush << endl;
+        getline(f, temp, ',');
+        cout << "Name: " << temp << flush << endl;
+        getline(f, temp, ',');
+        cout << "DOB: " << temp << flush << endl;
+        getline(f, temp, ',');
+        cout << "Gender: " << temp << flush << endl;        
+        // temp.erase(temp.find("\n"));
+        
     } 
     return 0;   
 }
