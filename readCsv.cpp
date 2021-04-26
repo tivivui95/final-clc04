@@ -35,9 +35,10 @@ int main() {
         getline(f, temp, ',');
         cout << "DOB: " << temp << flush << endl;
         getline(f, temp, ',');
-        cout << "Gender: " << temp << flush << endl;        
+        cout << "Gender: " << temp << flush << endl;
+        cout << "------------------------------------------" << endl;
         // temp.erase(temp.find("\n"));
-        
-    } 
-    return 0;   
+
+    }
+    return 0;
 }
