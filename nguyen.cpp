@@ -16,30 +16,27 @@ void readCSV()
      ifstream f;
      f.open("E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\classData\\20clc01\\nguyen.csv");
      if (!f.is_open()) cout << "ERROR !!!" << '\n';
-     string No;
-     string fullname;
-     string DoB;
-     string studentID;
-     string socialID;
-     string gender;
+     string tmp = "tmp";
+     f.ignore(1, '\n');
      while (f.good())
      {
-         getline(f, No, ',');
-         getline(f, fullname, ',');
-         getline(f, DoB, ',');
-         getline(f, studentID, ',');
-         getline(f, socialID, ',');
-         getline(f, gender, ',');
+         getline(f, tmp, '\n');
+         getline(f, tmp, ',');
+         cout << "No. " << tmp << flush << '\n';
+         getline(f, tmp, ',');
+         cout << "Name: " << tmp << flush << '\n';
+         getline(f, tmp, ',');
+         cout << "Date of birth: " << tmp << flush << '\n';
+         getline(f, tmp, ',');
+         cout << "Student ID: " << tmp << flush << '\n';
+         getline(f, tmp, ',');
+         cout << "Social ID: " << tmp << flush << '\n';
+         getline(f, tmp, ',');
+         cout << "Gender: " << tmp << flush << '\n';
 
-         cout << "No. " << No << '\n';
-         cout << "Name: " << fullname << '\n';
-         cout << "Date of birth: " << DoB << '\n';
-         cout << "Student ID: " << studentID << '\n';
-         cout << "Social ID: " << socialID << '\n';
-         cout << "Gender: " << gender << '\n';
          cout << "------------------" << '\n';
      }
-     f.ignore();
+
      f.close();
 
 
