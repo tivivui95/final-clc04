@@ -2,6 +2,8 @@
 
 void studentDashboard(Node* head, fstream &student,fstream &lop, Student info, int choice)
 {
+	student.open("C:/Users/Admin/Documents/GitHub/final-clc04/import/student.csv",ios :: in);
+	lop.open("C:/Users/Admin/Documents/GitHub/final-clc04/import/class.csv",ios :: in)
 	cout << "1.Enroll\n";
 	cout << "2.Manage Class\n ";
 	cout << "3.Manage course\n";
@@ -19,12 +21,12 @@ void studentDashboard(Node* head, fstream &student,fstream &lop, Student info, i
 		{
 		case 1:
 		{
-			enroll(head,lop, student, info);
+			while (!student.eof() && !lop.eof()) enroll(head,lop, student, info);
 			break;
 		}
 		case 2:
 		{
-			viewList(lop);
+			while (!lop.eof()) (viewList(lop);
 			break;
 		}
 		case 3:
@@ -43,24 +45,47 @@ void studentDashboard(Node* head, fstream &student,fstream &lop, Student info, i
 		cin >> b;
 		switch (b)
 		{
-		case 1:
-		{
-			viewListOfClass(lop);
-			break;
-		}
-		case 2:
-		{
-			viewListofStudentinClass(student);
-			break;
-		}
-		}
+		    case 1:
+	    	{
+			    while (!lop.eof()) viewListOfClass(lop);
+			    break;
+		    }
+		    case 2:
+		    {
+			    while (!student.eof()) viewListofStudentinClass(student);
+			    break;
+	     	}
+	  	}
+		break;
 	}
 	case 3:
+	{
+		int c;
+		cout << "1.View list of course\n";
+		cout << "2.View student in course\n";
+		cin >> c;
+		switch(c)
+		{
+			case 1:
+			{
+				while (!lop.eof()) viewListOfClass(lop);
+				break;
+			}
+			case 2:
+			{
+				while (!student.eof() viewListofStudentinClass(student);
+				break;
+			}
+		}
+		break;
+	}
+	case 4:
 	{
 
 	}
 	}
-
+	student.close();
+	lop.close();
 }
 
 Node* enroll(Node* head, fstream &lop, fstream &student, Student info)
@@ -147,3 +172,4 @@ void viewListofStudentinClass(fstream &student)
 		cout << line << endl;
 	}
 }
+
