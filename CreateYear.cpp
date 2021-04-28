@@ -58,7 +58,7 @@ bool year_is_exist(Year* &pHead, int& n, char* year)
 void createNewYear(Year* &pHead, int n, char* year)
 {
     ofstream fyear;
-    fyear.open("E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\yearData\\year.txt");
+    fyear.open("20/yearData/year.txt");
 
     Year* pCur = pHead;
     fyear << n << endl;
@@ -83,12 +83,12 @@ void createNewYear(Year* &pHead, int n, char* year)
     }
     fyear.close();
 
-    char direct[] = "E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\yearData\\";
+    char direct[] = "20/yearData/";
 	char s[500] = "";
 	strcat(s, direct);
 	strcat(s, year);
 	CreateDirectoryA(s, NULL);
-	strcat(s, "\\semester.txt");
+	strcat(s, "/semester.txt");
 
 	fyear.open(s);
 	fyear << 0;
