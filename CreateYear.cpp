@@ -1,7 +1,7 @@
 #include "Header.h"
 
 
-bool year_exist(Year* &pHead, int& n, char* year)
+bool year_is_exist(Year* &pHead, int& n, char* year)
 {
     ifstream fyear;
     fyear.open("E:\\Data_Bin\\20127261_KTLT\\\Final_TH\\\final-clc04\\20\\yearData");
@@ -114,6 +114,6 @@ int main()
 
     run();
     cout << "You has created new year successfully !!!" << endl;
-    year_exist(pHead, n, year);
+    year_is_exist(pHead, n, year);
     return 0;
 }

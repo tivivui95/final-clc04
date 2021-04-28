@@ -1,8 +1,8 @@
 #include "Header.h"
 
-bool semester_exist(Year* &pHead, int &n, char* semester, char* year)
+bool semester_is_exist(Year* &pHead, int &n, char* semester, char* year)
 {
-    char diredt[] = "E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\yearData\\";
+    char direct[] = "E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\yearData\\";
 	char s[500] = "";
 	strcat(s, direct);
 	strcat(s, year);
@@ -29,7 +29,7 @@ bool semester_exist(Year* &pHead, int &n, char* semester, char* year)
                 char s[12];
                 fsin.ignore();
                 fsin.get(s, 12, '\n');
-                pHead->semesterData = new char[strlen(s) + 1];
+                pHead->semestersData = new char[strlen(s) + 1];
                 strcpy(pHead->semestersData, s);
                 pCur = pHead;
                 pHead->pNext = nullptr;
@@ -37,12 +37,13 @@ bool semester_exist(Year* &pHead, int &n, char* semester, char* year)
             else
             {
                 pCur->pNext = new Year();
+                pCur = pCur->pNext;
                 char s[12];
                 fsin.ignore();
                 fsin.get(s, 12, '\n');
                 pCur->semestersData = new char[strlen(s) + 1];
                 strcpy(pCur->semestersData, s);
-                pCur-pNext = nullptr;
+                pCur->pNext = nullptr;
             }
             check--;
         }
@@ -68,7 +69,7 @@ void createNewSemester(Year* &pHead, int &n, char* semester, char* year)
 
     Year* pCur = pHead;
 	n += 1;
-	fout << n << endl;
+	fsout << n << endl;
 	if (pHead == nullptr)
     {
 		pHead = new Year;
@@ -79,8 +80,8 @@ void createNewSemester(Year* &pHead, int &n, char* semester, char* year)
 	else
 	{
 		while (pCur != nullptr)
-            {
-			fout << pCur->semestersData << endl;
+        {
+			fsout << pCur->semestersData << endl;
 			pCur = pCur->pNext;
 		}
 		pCur = new Year;

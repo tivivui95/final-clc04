@@ -120,7 +120,10 @@ void CreateSubject(Node*& head);
 void maindashboard(int input, Node*& head);
 void AddNewSubject(Node*&head);
 void DeleteSubject(Node*&head);
-void CreateSchoolYear(Node*& pHead);
+bool year_is_exist(Year* &pHead, int& n, char* year);
+void createNewYear(Year* &pHead, int n, char* year);
+bool semester_is_exist(Year* &pHead, int &n, char* semester, char* year);
+void createNewSemester(Year* &pHead, int &n, char* semester, char* year);
 void Display(Node*& head, ofstream& Subject_file);
 // UI function in UI.cpp
 void UITitle(string input);
