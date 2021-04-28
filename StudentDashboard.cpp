@@ -3,7 +3,7 @@
 void studentDashboard(Node* head, fstream &student,fstream &lop, Student info, int choice)
 {
 	student.open("student.txt",ios :: in);
-	lop.open("class.txt",ios :: in)
+	lop.open("class.txt",ios :: in);
 	cout << "1.Enroll\n";
 	cout << "2.Manage Class\n ";
 	cout << "3.Manage course\n";
@@ -26,7 +26,7 @@ void studentDashboard(Node* head, fstream &student,fstream &lop, Student info, i
 		}
 		case 2:
 		{
-			while (!lop.eof()) (viewList(lop);
+			while (!lop.eof()) viewList(lop);
 			break;
 		}
 		case 3:
@@ -73,7 +73,7 @@ void studentDashboard(Node* head, fstream &student,fstream &lop, Student info, i
 			}
 			case 2:
 			{
-				while (!student.eof() viewListofStudentinClass(student);
+				while (!student.eof()) viewListofStudentinClass(student);
 				break;
 			}
 		}
