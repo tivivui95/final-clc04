@@ -1,16 +1,17 @@
 #ifndef HEADER_H
 #define HEADER_H
 // #include <bits/stdc++.h>
-#include<iostream>
-#include<iomanip>
-#include<string>
-#include<fstream>
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <fstream>
 #include <sstream>
 #include <Windows.h>
 #include <cstdlib>
 #include <stdlib.h>
 #include <windows.h>
 #include <cstring>
+#include <vector>
 using namespace std;
 
 #define MaxStudent 50;
@@ -52,6 +53,13 @@ struct Staff
 {
     string FullName, Username, UserId;
     Stafftime* Allcourse;
+};
+
+struct Year {
+	char* yearsData;
+	char* semestersData;
+	char* className;
+	Year* pNext;
 };
 
 struct Course
@@ -99,7 +107,7 @@ void DisplayNavStudent(LoginStudent* LStu);
 void studentDbView(LoginM* data);
 void staffDbView(LoginM* data);
 
-// Student Dashboard 
+// Student Dashboard
 void viewList(fstream &lop);
 void removecourse(Node*& subject);
 void viewListOfClass(fstream &lop);

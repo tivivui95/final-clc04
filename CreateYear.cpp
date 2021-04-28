@@ -1,9 +1,4 @@
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <vector>
-#include <cstring>
-using namespace std;
+#include "Header.h"
 
 struct Year {
 	char* yearsData;
