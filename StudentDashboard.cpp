@@ -2,8 +2,8 @@
 
 void studentDashboard(Node* head, fstream &student,fstream &lop, Student info, int choice)
 {
-	student.open("C:/Users/Admin/Documents/GitHub/final-clc04/import/student.csv",ios :: in);
-	lop.open("C:/Users/Admin/Documents/GitHub/final-clc04/import/class.csv",ios :: in)
+	student.open("student.txt",ios :: in);
+	lop.open("class.txt",ios :: in)
 	cout << "1.Enroll\n";
 	cout << "2.Manage Class\n ";
 	cout << "3.Manage course\n";
