@@ -1,11 +1,5 @@
 #include "Header.h"
 
-struct Year {
-	char* yearsData;
-	char* semestersData;
-	char* className;
-	Year* pNext;
-};
 
 bool year_exist(Year* &pHead, int& n, char* year)
 {
@@ -88,16 +82,38 @@ void createNewYear(Year* &pHead, int n, char* year)
         pCur->pNext = nullptr;
     }
     fyear.close();
+
+    char direct[] = "E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\yearData\\";
+	char s[500] = "";
+	strcat(s, direct);
+	strcat(s, year);
+	CreateDirectoryA(s, NULL);
+	strcat(s, "\\semester.txt");
+
+	fyear.open(s);
+	fyear << 0;
+	fyear.close();
+}
+
+void run()
+{
+    Year* pHead = nullptr;
+    int n;
+    //cout << "Number of year you want to create: "; cin >> n;
+    char* year = "2020 - 2021";
+
+
+    createNewYear(pHead, n, year);
 }
 
 int main()
 {
     Year* pHead = nullptr;
     int n;
-    cout << "Number of year you want to create: "; cin >> n;
-    char* year = "2020 - 2021";
+    char* year = "";
 
-    //year_exist(pHead, n, year);
-    createNewYear(pHead, n, year);
+    run();
+    cout << "You has created new year successfully !!!" << endl;
+    year_exist(pHead, n, year);
     return 0;
 }

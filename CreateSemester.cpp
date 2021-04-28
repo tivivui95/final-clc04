@@ -1,5 +1,13 @@
 #include "Header.h"
 
+bool semester_exist(Year* &pHead, int &n, char* semester, char* year)
+{
+    ifstream fsin;
+    fsin.open("E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\yearData\\semester.txt");
+
+
+}
+
 void createNewSemester(Year* &pHead, int &n, char* semester, char* year)
 {
     ofstream fsout;
