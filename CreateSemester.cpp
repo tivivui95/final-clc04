@@ -2,8 +2,61 @@
 
 bool semester_exist(Year* &pHead, int &n, char* semester, char* year)
 {
+    char diredt[] = "E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\yearData\\";
+	char s[500] = "";
+	strcat(s, direct);
+	strcat(s, year);
+	strcat(s, "\\semester.txt");
+
     ifstream fsin;
-    fsin.open("E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\yearData\\semester.txt");
+    fsin.open(s);
+
+    fsin >> n;
+    int check = n;
+    if (check == 0)
+    {
+        fsin.close();
+        return false;
+    }
+    else
+    {
+        Year* pCur = pHead;
+        while (check > 0)
+        {
+            if (!pHead)
+            {
+                pHead = new Year();
+                char s[12];
+                fsin.ignore();
+                fsin.get(s, 12, '\n');
+                pHead->semesterData = new char[strlen(s) + 1];
+                strcpy(pHead->semestersData, s);
+                pCur = pHead;
+                pHead->pNext = nullptr;
+            }
+            else
+            {
+                pCur->pNext = new Year();
+                char s[12];
+                fsin.ignore();
+                fsin.get(s, 12, '\n');
+                pCur->semestersData = new char[strlen(s) + 1];
+                strcpy(pCur->semestersData, s);
+                pCur-pNext = nullptr;
+            }
+            check--;
+        }
+        fsin.close();
+
+        pCur = pHead;
+        while (pCur)
+        {
+            if (strcmp(pCur->semestersData, semester) == 0) return true;
+            pCur = pCur->pNext;
+
+        }
+        return false;
+    }
 
 
 }
