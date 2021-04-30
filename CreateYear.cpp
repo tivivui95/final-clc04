@@ -84,14 +84,14 @@ void createNewYear(Year* &pHead, int n, char* year)
     fyear.close();
 
     char direct[] = "20/yearData/";
-	char s[500] = "";
-	strcat(s, direct);
-	strcat(s, year);
-	CreateDirectoryA(s, NULL);
-	strcat(s, "/semester.txt");
+	char y[500] = "";
+	strcat(y, direct);
+	strcat(y, year);
+	CreateDirectoryA(y, NULL);
+	strcat(y, "/semester.txt");
 
-	fyear.open(s);
-	fyear << 0;
+	fyear.open(y);
+	fyear << endl;
 	fyear.close();
 }
 

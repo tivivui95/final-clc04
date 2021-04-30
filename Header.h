@@ -58,6 +58,7 @@ struct Staff
 struct Year {
 	char* yearsData;
 	char* semestersData;
+	char* coursesData;
 	char* className;
 	Year* pNext;
 };

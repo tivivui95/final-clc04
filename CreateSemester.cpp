@@ -90,4 +90,96 @@ void createNewSemester(Year* &pHead, int &n, char* semester, char* year)
 		pCur->pNext = nullptr;
 	}
 	fsout.close();
+
+	char direct[] = "20/yearData/";
+	char s[500] = "";
+	strcat(s, direct);
+	strcat(s, year);
+	CreateDirectoryA(s, NULL);
+	//strcat(s, "/semester.txt");
+
+	fsout.open(s);
+	fsout << endl;
+	fsout.close();
+}
+
+void run1()
+{
+    Year* pHead = nullptr;
+    int n;
+    char* year = "2020 - 2021";
+    char* sem1 = "Semester 1 (Fall)";
+    char* sem2 = "Semester 2 (Summer)";
+    char* sem3 = "Semester 3 (Autumn)";
+    cout << "Number of semester you want to create: "; cin >> n;
+    switch(n)
+    {
+        case 1:
+        {
+            cout << "Press '1' for semeseter 1 !" << endl;
+            cout << "Press '2' for semeseter 2 !" << endl;
+            cout << "Press '3' for semeseter 3 !" << endl;
+            int num;
+            cout << "Which semester do you want to create ?";
+            cin >> num;
+            if (num == 1)
+            {
+                createNewSemester(pHead, n, sem1, year);
+            }
+            if (num == 2)
+            {
+                createNewSemester(pHead, n, sem2, year);
+            }
+            if (num == 3)
+            {
+                createNewSemester(pHead, n, sem3, year);
+            }
+        }
+
+        case 2:
+        {
+            cout << "Press '12' for semeseter 1 and 2 !" << endl;
+            cout << "Press '13' for semeseter 1 and 3 !" << endl;
+            cout << "Press '23' for semeseter 2 and 3 !" << endl;
+            int num;
+            cout << "Which semester do you want to create ? ";
+            cin >> num;
+            if (num == 12)
+            {
+                createNewSemester(pHead, n, sem1, year);
+                createNewSemester(pHead, n, sem2, year);
+            }
+            if (num == 13)
+            {
+                createNewSemester(pHead, n, sem1, year);
+                createNewSemester(pHead, n, sem3, year);
+            }
+            if (num == 23)
+            {
+                createNewSemester(pHead, n, sem2, year);
+                createNewSemester(pHead, n, sem3, year);
+            }
+        }
+
+        case 3:
+        {
+            createNewSemester(pHead, n, sem1, year);
+            createNewSemester(pHead, n, sem2, year);
+            createNewSemester(pHead, n, sem3, year);
+        }
+    }
+    //createNewYear(pHead, n, semester, year);
+}
+
+int main()
+{
+    Year* pHead = nullptr;
+    int n;
+    char* year = "";
+    char* semester = "";
+
+    run1();
+    cout << "You has created new semester successfully !!!" << endl;
+    //year_is_exist(pHead, n, year);
+    return 0;
 }
