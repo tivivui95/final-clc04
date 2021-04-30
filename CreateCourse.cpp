@@ -104,3 +104,15 @@ void createNewCourse(Year* pHead, int &n, char* year, char* semester, char* cour
 	strcat(e, className);
 	CreateDirectoryA(e, NULL);
 }
+
+void deleteCourse(Year* &pHead2)
+{
+	Year* pCur = pHead2;
+	while (pHead2)
+    {
+		pHead2 = pHead2->pNext;
+		delete[] pCur->coursesData;
+		delete pCur;
+		pCur = pHead2;
+	}
+}

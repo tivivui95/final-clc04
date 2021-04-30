@@ -121,11 +121,23 @@ void CreateSubject(Node*& head);
 void maindashboard(int input, Node*& head);
 void AddNewSubject(Node*&head);
 void DeleteSubject(Node*&head);
+
 bool year_is_exist(Year* &pHead, int& n, char* year);
 void createNewYear(Year* &pHead, int n, char* year);
-bool semester_is_exist(Year* &pHead, int &n, char* semester, char* year);
-void createNewSemester(Year* &pHead, int &n, char* semester, char* year);
+void deleteYear(Year*& pHead);
+
+bool semester_is_exist(Year* &pHead, int &n, char* year, char* semester);
+void createNewSemester(Year* &pHead, int &n, char* year, char* semester);
+void deleteSemester(Year* &pHead1);
+
+bool course_is_exist(Year*& pHead, int& n, char* year, char* semester, char* course);
+void createNewCourse(Year* pHead, int &n, char* year, char* semester, char* course);
+void deleteCourse(Year* &pHead2);
+
+void createYSC();
+
 void Display(Node*& head, ofstream& Subject_file);
+
 // UI function in UI.cpp
 void UITitle(string input);
 void UILineLong();

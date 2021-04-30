@@ -95,25 +95,15 @@ void createNewYear(Year* &pHead, int n, char* year)
 	fyear.close();
 }
 
-void run()
+void deleteYear(Year*& pHead)
 {
-    Year* pHead = nullptr;
-    int n;
-    //cout << "Number of year you want to create: "; cin >> n;
-    char* year = "2020 - 2021";
-
-
-    createNewYear(pHead, n, year);
+	Year* pCur = pHead;
+	while (pHead)
+    {
+		pHead = pHead->pNext;
+		delete[] pCur->yearsData;
+		delete pCur;
+		pCur = pHead;
+	}
 }
 
-int main()
-{
-    Year* pHead = nullptr;
-    int n;
-    char* year = "";
-
-    run();
-    cout << "You has created new year successfully !!!" << endl;
-    year_is_exist(pHead, n, year);
-    return 0;
-}
