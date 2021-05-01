@@ -46,8 +46,11 @@ int main() {
     } while (ch == 'y' || ch == 'Y');
 
     ofstream Subject_file;
-    Subject_file.open("Subject List.txt", ios::trunc);
+    ifstream score_file;
+    score_file.open("Toan.txt", ios::in);
+    Subject_file.open("Subject List.txt", ios::in);
     Display(head, Subject_file);
+
     Subject_file.close();
 
 
