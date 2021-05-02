@@ -68,7 +68,7 @@ void createNewCourse(Year* pHead, int &n, char* year, char* semester, char* cour
     strcat(c, year);
     strcat(c, "/");
 	strcat(c, semester);
-	strcat(c, "/courses.txt");
+	strcat(c, "/courses.csv");
 
 	ofstream fcout;
 	fcout.open(c);
@@ -96,12 +96,12 @@ void createNewCourse(Year* pHead, int &n, char* year, char* semester, char* cour
 	fcout.close();
 
 	char e[500] = "";
-	strcat(e, dirD);
+	strcat(e, direct);
 	strcat(e, year);
-	strcat(e, "\\");
+	strcat(e, "/");
 	strcat(e, semester);
-	strcat(e, "\\");
-	strcat(e, className);
+	strcat(e, "/");
+	strcat(e, course);
 	CreateDirectoryA(e, NULL);
 }
 

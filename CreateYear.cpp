@@ -4,7 +4,7 @@
 bool year_is_exist(Year* &pHead, int& n, char* year)
 {
     ifstream fyear;
-    fyear.open("E:\\Data_Bin\\20127261_KTLT\\\Final_TH\\\final-clc04\\20\\yearData");
+    fyear.open("20/yearData");
     fyear >> n;
     int check = n;
     if (check == 0)

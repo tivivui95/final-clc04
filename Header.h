@@ -55,12 +55,47 @@ struct Staff
     Stafftime* Allcourse;
 };
 
-struct Year {
+struct Lecture
+{
+    char* name;
+	char* academy;
+	int gender;
+};
+
+struct Year
+{
 	char* yearsData;
 	char* semestersData;
 	char* coursesData;
 	char* className;
 	Year* pNext;
+};
+
+struct Time
+{
+	int hours;
+	int mins;
+};
+
+struct Date
+{
+  int day;
+  int month;
+  int year;
+};
+struct Schedule
+{
+	int no;
+	char* courseID;
+	char* courseName;
+	char* Class;
+	char* dayofweek;
+	lecture* lec;
+	Date Sdate;
+	Date Edate;
+	Time Stime;
+	Time Etime;
+
 };
 
 struct Course
