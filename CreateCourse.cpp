@@ -5,7 +5,7 @@ bool course_is_exist(Year*& pHead, int& n, char* year, char* semester, char* cou
 	char dirD[] = "20/yearData";
 	char c[500] = "";
 	strcat(c, dirD);
-	strcat(c, year);
+	// strcat(c, year);
 	strcat(c, "/");
 	strcat(c, semester);
 	strcat(c, "/courses.txt");
@@ -81,16 +81,16 @@ void createNewCourse(Year* pHead, int &n, char* year, char* semester, char* cour
 		pHead = new Year;
 		pHead->coursesData = course;
 		pHead->pNext = nullptr;
-		fcout << pHead->courseData;
+		fcout << pHead->coursesData;
 	}
 	else {
 		while (pCur) {
-			fout << pCur->coursesData << endl;
+			fcout << pCur->coursesData << endl;
 			pCur = pCur->pNext;
 		}
 		pCur = new Year;
 		pCur->coursesData = course;
-		fout << pCur->coursesData;
+		fcout << pCur->coursesData;
 		pCur->pNext = nullptr;
 	}
 	fcout.close();

@@ -90,7 +90,7 @@ struct Schedule
 	char* courseName;
 	char* Class;
 	char* dayofweek;
-	lecture* lec;
+	// lecture* lec;
 	Date Sdate;
 	Date Edate;
 	Time Stime;
@@ -195,7 +195,9 @@ void UIgrid_1_1_Long(string string);
 void UIgrid_1_1_Short(string string);
 
 //Score calculation
- double GPA(int score_earn, int total credit);
+ double GPA(int score_earn, int TotalCredit);
  void InputScore(Score*& head2, ifstream& Subject_file, ifstream& score_file);
- double Average score(int score);
+ double AverageScore(int score);
+ // CreateYSC
+ bool year_is_exist(Year* &pHead, int& n, char* year);
 #endif

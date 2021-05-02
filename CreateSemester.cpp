@@ -65,7 +65,7 @@ bool semester_is_exist(Year* &pHead, int &n, char* year, char* semester)
 void createNewSemester(Year* &pHead, int &n, char* year, char* semester)
 {
     ofstream fsout;
-    fsout.open("E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\yearData\\semester.txt");
+    fsout.open("/20/yearData/semester.txt");
 
     Year* pCur = pHead;
 	n += 1;

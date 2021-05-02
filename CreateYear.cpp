@@ -4,7 +4,7 @@
 bool year_is_exist(Year* &pHead, int& n, char* year)
 {
     ifstream fyear;
-    fyear.open("20/yearData");
+    fyear.open("20/yearData/year.txt");
     fyear >> n;
     int check = n;
     if (check == 0)
@@ -86,7 +86,7 @@ void createNewYear(Year* &pHead, int n, char* year)
     char direct[] = "20/yearData/";
 	char y[500] = "";
 	strcat(y, direct);
-	strcat(y, year);
+	// strcat(y, year);
 	CreateDirectoryA(y, NULL);
 	strcat(y, "/semester.txt");
 

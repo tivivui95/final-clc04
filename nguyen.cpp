@@ -14,7 +14,7 @@ struct Node
 void readCSV()
 {
      ifstream f;
-     f.open("E:\\Data_Bin\\20127261_KTLT\\Final_TH\\final-clc04\\20\\classData\\20clc01\\nguyen.csv");
+     f.open("20/classData/20clc01/nguyen.csv");
      if (!f.is_open()) cout << "ERROR !!!" << '\n';
      string tmp = "tmp";
      f.ignore(1, '\n');

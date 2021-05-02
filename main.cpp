@@ -7,6 +7,12 @@ int main() {
     MBuf buf;
     std::cout.rdbuf( &buf );
     // First Screen to Login
+    // char direct[] = "20/yearData/";
+	// char y[500] = "";
+	// strcat(y, direct);
+	// // strcat(y, year);
+	// CreateDirectoryA(y, NULL);
+	// strcat(y, "/semester.txt");
     system("cls");
     UITitle("Welcome to HCMUS Portal!");
     UIgrid_2_1_Long("1. Login", "2. Exit");    
@@ -75,7 +81,7 @@ void staffDbView(LoginM* data) {
         // cout << temp << flush << endl;
     f.close();
     DisplayNavStaff(CurS);
-    UICin(input);
+    createYSC();
 }
 
 void studentDbView(LoginM* data) {

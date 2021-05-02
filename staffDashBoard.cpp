@@ -92,6 +92,13 @@ void DeleteSubject(Node*& head)
     }
 }
 
+// int ChooseOption() {
+//     cout << "Choose your option: " << flush << endl;
+//     createYSC();
+//     int input; UICin(input);
+//     return input;
+// }
+
 void maindashboard(int input, Node*& head) 
 {
     switch (input)
