@@ -117,6 +117,13 @@ struct Class
     Student student;
 };
 
+struct Score
+{
+    double score;
+    int credit;
+    string name;
+    Node* next;
+};
 
 struct LoginStudent
 {
@@ -188,7 +195,7 @@ void UIgrid_1_1_Long(string string);
 void UIgrid_1_1_Short(string string);
 
 //Score calculation
-// double GPA(int score_earn, int total credit);
-bool Sort(double average_score, double GPA);
-// double Average score(int score);
+ double GPA(int score_earn, int total credit);
+ void InputScore(Score*& head2, ifstream& Subject_file, ifstream& score_file);
+ double Average score(int score);
 #endif
