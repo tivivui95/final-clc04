@@ -15,7 +15,12 @@ using namespace std;
 
 #define MaxStudent 50;
 // Setting accent, Don't change anything in this class, it's for Vietnamese character
-
+typedef struct _SMALL_RECT {
+    SHORT Left;
+    SHORT Top;
+    SHORT Right;
+    SHORT Bottom;
+} SMALL_RECT;
 
 
 class MBuf: public std::stringbuf {
