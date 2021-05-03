@@ -135,8 +135,9 @@ void manageYear() {
 void createSem(string curYear) {
     ofstream f;
     f.open("Data/general/"+ curYear +"sem.txt");
-    cout << "Choose semester to create:\n1. s1\n2. s2\n3. s3." << flush << endl;
-    
+    UIgrid_1_1_Long("Choose semester to create:");
+	UIgrid_3_1_Long("1. s1","2. s2","3. s3.");
+    UIInput(">> ");
     cin >> input;
     switch (input)
     {
@@ -157,8 +158,10 @@ void createSem(string curYear) {
 
 void manageSem(string curYear, string curSem) {
     // Add UI
-    cout << "1. Create Course.\n2. Create Enroll Period.\n3. Manage Course.\n";
-     cin >> input;
+	system("cls");
+    UIgrid_3_1_Long("1. Create Course.","2. Create Enroll Period.","3. Manage Course.");
+    UIInput(">>");
+	cin >> input;
     switch (input)
     {
     case 1:
@@ -184,13 +187,14 @@ void manageSem(string curYear, string curSem) {
 
 void createCourse(string curYear, string curSem) {
     fstream addList;
+	system("cls");
     ifstream f;
     f.open("Data/general/course/list.txt");
     f.close();
     addList.open("Data/general/course/list.txt", ios::app);
     string temp; 
     // Add UI;
-    cout << "Course ID: " << flush;
+    UIInput("Course ID: ");
     cin.ignore(100, '\n');
     getline(cin, temp);
     char dir[] = "Data/general/course/";
@@ -211,21 +215,21 @@ void createCourse(string curYear, string curSem) {
     cout << "Course Name: " << flush;
     getline(cin, temp);
     addList << temp << ",";
-    cout << "Teacher Name: " << flush;
+    UIInput("Teacher Name: " );
     getline(cin, temp);
     addList << temp << ",";
-    cout << "Nums of Credits: " << flush;
+    UIInput("Nums of Credits: ");
     cin >> temp; addList << temp << ",";
     int num = 50;
-    cout << "Max Students: " << flush;
+    UIInput("Max Students: ");
     cin >> num; addList << num << ",";
-    cout << "Session 1 Day (2-7) from Mon to Sat: ";
+    UIInput("Session 1 Day (2-7) from Mon to Sat: ");
     int tempNum; cin >> tempNum; addList << tempNum << ",";
-    cout << "Session 1 Time (1-4):\n\t1. 07:30\n\t2. 09:30\n\t3. 13:30\n\t4. 15:30\n";
+    UIInput("Session 1 Time (1-4):\n\t1. 07:30\n\t2. 09:30\n\t3. 13:30\n\t4. 15:30\n");
     cin >> tempNum; addList << tempNum << ",";
-    cout << "Session 2 Day (2-7) from Mon to Sat: ";
+    UIInput("Session 2 Day (2-7) from Mon to Sat: ");
     cin >> tempNum; addList << tempNum << ",";
-    cout << "Session 2 Time (1-4):\n\t1. 07:30\n\t2. 09:30\n\t3. 13:30\n\t4. 15:30\n";
+    UIInput("Session 2 Time (1-4):\n\t1. 07:30\n\t2. 09:30\n\t3. 13:30\n\t4. 15:30\n");
     cin >> tempNum; addList << tempNum << "," << endl;
     addList.close();
     return;
@@ -233,9 +237,10 @@ void createCourse(string curYear, string curSem) {
 
 void createEnrollPeriod() {
     int day, month, year;
-    cout << "Choose Start Year: "; cin >> year;
-    cout << "Choose Start Month (1-12): "; cin >> month;
-    cout << "Choose Start Day (1-31): "; cin >> day;
+	system("cls");
+    UIInput("Choose Start Year: "); cin >> year;
+    UIInput("Choose Start Month (1-12): "); cin >> month;
+    UIInput("Choose Start Day (1-31): "); cin >> day;
     ofstream enroll;
     enroll.open("Data/general/enrollTime.txt");
     enroll << day << "-" << month << "-" << year << endl;
@@ -247,8 +252,13 @@ void createEnrollPeriod() {
 }
 
 void manageCourse() {
-    cout << "Courses:\n1.View Course Students\n2.Edit\n3.Delete\n4. Import Score (csv file)\n";
-    cin >> input;
+	system("cls");
+	setColor(0, 14);
+	UITitle("MANAGE COURSES");
+	setColor(0, 10);
+    UIgrid_2_1_Long("1.View Course Students","2.Edit");UIgrid_2_1_Long("3.Delete","4. Import Score (csv file)");
+    UIInput(">> ");
+	cin >> input;
     ifstream f;
     f.open("Data/general/course/list.txt");
     // f.ignore(100, '\n');
@@ -272,7 +282,7 @@ void manageCourse() {
         getline(f, temp, '\n');
     }
     f.close();
-    cout << "Choose course (Type course ID):"; 
+    UIInput("Choose course (Type course ID):"); 
     string input2;
     cin >> input2;
     switch (input)
@@ -294,10 +304,11 @@ void manageCourse() {
 }
 
 void importScore(string courseName) {
+	system("cls");
     ofstream w;
     w.open("Data/general/course/" + courseName + "/scores.txt");
     ifstream r;
-    cout << "Enter directory:";
+    UIInput("Enter directory:");
     string dir, temp; cin >> dir;
     r.open(dir);
     getline(r, temp);
@@ -306,6 +317,7 @@ void importScore(string courseName) {
 }
 
 void editCourse(string courseName) {
+	system("cls");
     courseList * clist = getCourseList();
     // cur = clist;
     courseList * cur = clist;
@@ -314,10 +326,13 @@ void editCourse(string courseName) {
     while (cur!=nullptr && cur->id != courseName)
     cur = cur->next;
     // cout << cur->id << endl;
-    cout << "Choose field to edit: \n1. Name\n2. Teacher\n3. Credits\n4. Session 1 Day\n 5. Session 1 Time\n6. Session 2 Day\n 7. Session 2 Time\n8. Max students\n";
-    cin >> input;
-    
-    cout << "Enter field data:" << flush;
+    UIgrid_1_1_Long("Choose field to edit:");
+	UIgrid_3_1_Long("1. Name","2. Teacher","3. Credits");
+    UIgrid_3_1_Long("4. Session 1 Day","5. Session 1 Time","6. Session 2 Day");
+	UIgrid_2_1_Long(" 7. Session 2 Time","8. Max students");
+	UIInput(">> ");
+	cin >> input;
+    UIInput("Enter field data:");
     cin.ignore(100, '\n');
     switch (input)
     {
@@ -366,6 +381,7 @@ void deleteCourse(string courseName) {
 }
 
 void viewCourse(string courseName) {
+	system("cls");
     ifstream f;
     f.open("Data/general/course/" + courseName + "/students.txt");
     string temp;
@@ -386,8 +402,10 @@ void exportcsvfile(string courseName) {
 }
 
 void manageClass() {
-    cout << "1. Create New Class.\n2. Edit Class Info.\n3. Caculate GPA\n";
-    cin >> input;
+	system("cls");
+    UIgrid_3_1_Long("1. Create New Class.","2. Edit Class Info.","3. Caculate GPA");
+    UIInput(">> ");
+	cin >> input;
     switch (input)
     {
     case 1:
@@ -454,7 +472,9 @@ void caculateGPA() {
 }
 
 void createClass() {
-    cout << "Class name: "; string temp;
+	system("cls");
+	UITitle("CREATE CLASS");
+    UIInput("Class name: "); string temp;
     cin >> temp;
     fstream a;
     a.open("Data/general/class.txt", ios::app);
@@ -466,15 +486,18 @@ void createClass() {
     // return;
 }
 void editClasses() {
+	system("cls");
+	UITitle("EDIT CLASS");
     ifstream classes;
     classes.open("Data/general/class.txt");
     // stringNode* CArr = nullptr;
     string line;
-    while (getline(classes, line, ' ')) cout << line << endl;
-    cout << "Choose class: "; cin >> line;
+    while (getline(classes, line, ' ')) UIgrid_1_1_Long(line);
+    UIInput("Choose class: "); cin >> line;
     classes.close();
-    cout << "1. Add new student\n2. Import csv file";
-    cin >> input;
+    UIgrid_2_1_Long("1. Add new student","2. Import csv file");
+    UIInput(">> ");
+	cin >> input;
     switch (input)
     {
     case 1:
@@ -516,7 +539,7 @@ void editClass(string line) {
     fstream singleClass, userdata;
     userdata.open("Data/userdata.txt", ios::app);
     singleClass.open("Data/student/" + line + ".txt", ios::app);
-    cout << "Enter your directory to csv file: ";
+    UIInput("Enter your directory to csv file: ");
     cin >> line;
     ifstream f;
     f.open(line);
@@ -535,6 +558,8 @@ void editClass(string line) {
 
 
 void studentDasboard(string username) {
+	system("cls");
+	UITitle("STUDENT DASHBOARD");
     string timenow = currentTime();
     cout << timenow << endl;
     int nowData[3];
@@ -571,7 +596,9 @@ void studentDasboard(string username) {
             if (data[2] <= nowData[2] && nowData[2] <= data[5])
                 enrollnow(username);
     }
-    cout << "Choose option:\n1. View list of courses\n2. View score" << flush << endl;
+    UIgrid_1_1_Long("Choose option:");
+	UIgrid_2_1_Long("1. View list of courses","2. View score");
+	UIInput(">> ");
     cin >> input;
     switch (input)
     {
@@ -588,6 +615,7 @@ void studentDasboard(string username) {
 }
 
 void viewMyScore(string username) {
+	system("cls");
     ifstream r;
     string temp;
     r.open("Data/general/course/list.txt");
@@ -615,35 +643,36 @@ void viewMyCourse(string username) {
     courseList * mylist = getEnrollC(username);
     courseList* cur =mylist;
     while (cur!=nullptr) {
-
-    }
-    cout << cur->id << setw(25) << cur->name << setw(25) << cur->teacher << setw(5) << cur->max << setw(5) << cur->credits;
-    if (cur->s1day=="2") cout << setw(6) << "Mon";
-    else if (cur->s1day=="3") cout << setw(6) << "Tue";
-    else if (cur->s1day=="4") cout << setw(6) << "Wed";
-    else if (cur->s1day=="5") cout << setw(6) << "Thu";
-    else if (cur->s1day=="6") cout << setw(6) << "Fri";
-    else if (cur->s1day=="7") cout << setw(6) << "Sat";
-    if (cur->s1ses=="1") cout << setw(6) << "7:30";
-    else if (cur->s1ses=="2") cout << setw(6) << "9:30";
-    else if (cur->s1ses=="3") cout << setw(6) << "13:30";
-    else if (cur->s1ses=="4") cout << setw(6) << "15:30";
-    if (cur->s2day=="2") cout << setw(6) << "Mon";
-    else if (cur->s2day=="3") cout << setw(6) << "Tue";
-    else if (cur->s2day=="4") cout << setw(6) << "Wed";
-    else if (cur->s2day=="5") cout << setw(6) << "Thu";
-    else if (cur->s2day=="6") cout << setw(6) << "Fri";
-    else if (cur->s2day=="7") cout << setw(6) << "Sat";
-    if (cur->s2ses=="1") cout << setw(6) << "7:30";
-    else if (cur->s2ses=="2") cout << setw(6) << "9:30";
-    else if (cur->s2ses=="3") cout << setw(6) << "13:30";
-    else if (cur->s2ses=="4") cout << setw(6) << "15:30";
-    cout << endl;
-    cur = cur->next;
+		cout << cur->id << setw(25) << cur->name << setw(25) << cur->teacher << setw(5) << cur->max << setw(5) << cur->credits;
+		if (cur->s1day=="2") cout << setw(6) << "Mon";
+		else if (cur->s1day=="3") cout << setw(6) << "Tue";
+		else if (cur->s1day=="4") cout << setw(6) << "Wed";
+		else if (cur->s1day=="5") cout << setw(6) << "Thu";
+		else if (cur->s1day=="6") cout << setw(6) << "Fri";
+		else if (cur->s1day=="7") cout << setw(6) << "Sat";
+		if (cur->s1ses=="1") cout << setw(6) << "7:30";
+		else if (cur->s1ses=="2") cout << setw(6) << "9:30";
+		else if (cur->s1ses=="3") cout << setw(6) << "13:30";
+		else if (cur->s1ses=="4") cout << setw(6) << "15:30";
+		if (cur->s2day=="2") cout << setw(6) << "Mon";
+		else if (cur->s2day=="3") cout << setw(6) << "Tue";
+		else if (cur->s2day=="4") cout << setw(6) << "Wed";
+		else if (cur->s2day=="5") cout << setw(6) << "Thu";
+		else if (cur->s2day=="6") cout << setw(6) << "Fri";
+		else if (cur->s2day=="7") cout << setw(6) << "Sat";
+		if (cur->s2ses=="1") cout << setw(6) << "7:30";
+		else if (cur->s2ses=="2") cout << setw(6) << "9:30";
+		else if (cur->s2ses=="3") cout << setw(6) << "13:30";
+		else if (cur->s2ses=="4") cout << setw(6) << "15:30";
+		cout << endl;
+		cur = cur->next;
+	}
 }
 
 void enrollnow(string username) {
-    cout << "Choose course: ";
+	system("cls");
+	UITitle("ENROLL SYSTEM");
+    UIgrid_1_1_Long("Choose course: ");
     courseList * list = getCourseList();
     courseList * cur = list;
     int cou = 0;
@@ -655,6 +684,7 @@ void enrollnow(string username) {
         cout << endl;
         cur = cur->next;
     }
+	UIInput(">> ");
     cin >> input;
     cur = list;
     for (int i = 0; i < input - 1; i++)
