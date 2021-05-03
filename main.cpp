@@ -77,10 +77,10 @@ void getData(ifstream& r, courseList*& clist) {
     // r.ignore(100,'\n');  
     while (getline(r, cur->id, ',')) {
         getline(r, cur->name, ',');
-        cout << "ID:" << cur->id << endl;
+        // cout << "ID:" << cur->id << endl;
         getline(r, cur->teacher, ',');
         getline(r, temp, ','); cur->credits = stoi(temp);
-        cout << "Credits:" << cur->credits << endl;
+        // cout << "Credits:" << cur->credits << endl;
         getline(r, temp, ','); cur->max = stoi(temp);
         getline(r, cur->s1day, ',');
         getline(r, cur->s1ses, ',');
