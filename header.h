@@ -27,6 +27,15 @@ public:
 
 // Functions
 // Login function
+
+typedef struct _SMALL_RECT {
+    SHORT Left;
+    SHORT Top;
+    SHORT Right;
+    SHORT Bottom;
+} SMALL_RECT;
+
+
 void Login(string &username, string &type);
 bool checkLogin(string username, string password, string &type);
 // Dashboard
