@@ -673,7 +673,7 @@ void viewMyCourse(string username) {
 
 void enrollnow(string username) {
 	system("cls");
-	UITitle("ENROLL SYSTEM" );
+	UITitle("ENROLL SYSTEM");
     UIgrid_1_1_Long("Choose course: ");
     courseList * list = getCourseList();
     courseList * cur = list;
