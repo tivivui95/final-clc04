@@ -1,15 +1,13 @@
 #ifndef HEADER_H
 #define HEADER_H
-// #include <bits/stdc++.h>
-#include<iostream>
-#include<iomanip>
-#include<string>
-#include<fstream>
-#include <sstream>
+#include <iostream>
+#include <fstream>
 #include <Windows.h>
+#include <string>
+// #include <string.h>
 #include <cstdlib>
-#include <stdlib.h>
-#include <windows.h>
+#include <sstream>
+#include <iomanip>
 #include <cstring>
 using namespace std;
 
@@ -22,7 +20,9 @@ typedef struct _SMALL_RECT {
     SHORT Bottom;
 } SMALL_RECT;
 
+using namespace std;
 
+// Setting Vietnamese character
 class MBuf: public std::stringbuf {
 public:
     int sync() {
@@ -32,109 +32,90 @@ public:
     }
 };
 // Start here
+// Struct variable
+
+// Functions
+// Login function
+
+// typedef struct _SMALL_RECT {
+//     SHORT Left;
+//     SHORT Top;
+//     SHORT Right;
+//     SHORT Bottom;
+// } SMALL_RECT;
 
 
+void Login(string &username, string &type);
+bool checkLogin(string username, string password, string &type);
+// Dashboard
+void staffDashBoard(string username);
+void studentDasboard(string username);
+// Staff Dashboard
+void createYear();
+void manageYear();
+// Manage Year
+void manageClass();
+void createSem(string curYear);
+void manageSem(string curYear, string curSem);
+void manageClass();
+// Manage Semester
+void createCourse(string curYear, string curSem);
+void createEnrollPeriod();
+void manageCourse();
+// Manage course
+void viewCourse(string courseName);
+void editCourse(string courseName);
+void deleteCourse(string courseName);
+void exportcsvfile(string courseName);
+void importScore(string courseName);
+// Manage Class
+void createClass();
+void editClasses();
+void addNewStu(string line);
+void editClass(string line);
+void caculateGPA();
+// Student
+void enrollnow(string username);
+void viewMyCourse(string username);
+void viewMyScore(string username);
+// Other functions
+string getCurrentYear();
+string getCurrentSem(string curYear);
 
-struct Node
-{
-	int num;
-	string data;
-	Node* next;
+string getInfo(string username);
+string currentTime();
+struct stringNode {
+    string data;
+    int index;
+    stringNode* next;
 };
-// Login struct
-struct LoginM
-{
-	string LoginId, id, type;
-	bool check;
+
+struct courseList {
+    string id, name, teacher, s1day, s1ses, s2day, s2ses;
+    int credits, max;
+    courseList* next;
 };
-// Current Staff
-struct Stafftime
-{
-    string courseName, courseId, day1, time1, day2, time2;
-    Stafftime* Nextcourse;
-};
-struct Staff
-{
-    string FullName, Username, UserId;
-    Stafftime* Allcourse;
-};
+void deleteSNode(stringNode*& head);
+void addtoSNode(stringNode* &head, string add);
+void displaycList(courseList * cL);
+void getData(ifstream &r, courseList * &clist);
+courseList* getCourseList();
+void writeCourseList(courseList* clist);
+courseList* getEnrollC(string username);
 
-struct Course
-{
-    string courseID, courseN, teacherName, dayPerform;
-    int daysOfWeek;
-    // struct Student.FirstName;
-    // struct Student.LastName;
-};
-struct Student
-{
-    string FullName, StudentID, Gender, DoB;
-    int No, SocialID, SchoolYear;
-};
-
-struct Class
-{
-    string name;
-    Student student;
-};
-
-
-struct LoginStudent
-{
-    string FullName, Username, UserId;
-    Student* Detail;
-};
-
-
-// Login.cpp
-bool LoginMain(LoginM* &dat);
-
-// Create subject for admin.cpp
-void CreateSchoolYear(Node*& pHead);
-void AddStudent(Node* &pHead);
-// void enroll(Node&* head);
-void EditClassInfo(Node*& head2);
-void Navigation(int& choice);
-void Login(ifstream& f, string& k);
-
-// NavBar.cpp
-void DisplayNavStaff(Staff*&data);
-void NavProcess(int input);
-void DisplayNavStudent(LoginStudent* LStu);
-void studentDbView(LoginM* data);
-void staffDbView(LoginM* data);
-
-// Student Dashboard 
-void viewList(fstream &lop);
-void removecourse(Node*& subject);
-void viewListOfClass(fstream &lop);
-void viewListofStudentinClass(fstream &student);
-Node* enroll(Node* head, fstream &lop, fstream &student, Student info);
-void studentDashboard(Node* head, fstream &student,fstream &lop, Student info, int choice);
-
-// staffDashBoard.cpp
-void CreateSubject(Node*& head);
-void maindashboard(int input, Node*& head);
-void AddNewSubject(Node*&head);
-void DeleteSubject(Node*&head);
-void CreateSchoolYear(Node*& pHead);
-void Display(Node*& head, ofstream& Subject_file);
-// UI function in UI.cpp
-void UITitle(string input);
-void UILineLong();
-void UILineShort();
-void UIgrid_2_1_Long(string string1, string string2);
-void UIgrid_2_1_Short(string string1, string string2);
-void UIgrid_3_1_Long(string string1, string string2, string string3);
-void UIgrid_3_1_Short(string string1, string string2, string string3);
-void UIInput(string label);
-void Loading();
-int UICin(int& n);
-void UIgrid_1_1_Long(string string);
+// UI
+void setColor(int background_color, int text_color);
 void UIgrid_1_1_Short(string string);
 
-//Score calculation
-// double GPA(int score_earn, int total credit);
-bool Sort(double average_score, double GPA);
-// double Average score(int score);
+void UIgrid_1_1_Long(string string);
+int UICin(int& n);
+void Loading();
+void UIInput(string label);
+void UIgrid_3_1_Short(string string1, string string2, string string3);
+void UIgrid_3_1_Long(string string1, string string2, string string3);
+void UIgrid_2_1_Short(string string1, string string2);
+void UIgrid_2_1_Long(string string1, string string2);
+void UILineShort();
+void UILineLong();
+void UITitle(string input);
 #endif
