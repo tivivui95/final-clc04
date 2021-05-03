@@ -1,6 +1,11 @@
 #include "header.h"
 int main(int argc, char* argv[]) {
-
+    SetConsoleTitleA("Learning Management System");
+    HWND console = GetConsoleWindow();
+	RECT ConsoleRect;
+	GetWindowRect(console, &ConsoleRect); 
+ 
+    MoveWindow(console, ConsoleRect.left, ConsoleRect.top, 842, 450, TRUE);
     // Setting Vietnamese, don't change
     SetConsoleOutputCP(CP_UTF8);
     setvbuf(stdout, nullptr, _IONBF, 0);
@@ -10,11 +15,14 @@ int main(int argc, char* argv[]) {
     // cout << getCurrentYear() << flush;
     // cout << currentTime();
     // cout << getInfo("20127007") << flush;
+    setColor(0, 13);
+    UITitle("LEARNING MANAGEMENT SYSTEM");
+    setColor(0, 10);
     string username, type;
     Login(username, type);
     // Need UI here
-    cout << "username:" << username << endl;
-    cout << "type:" << type << endl;
+    system("cls");
+    UIgrid_2_1_Long("Username:" + username, "Type:" + type);
     if (type == "staff") staffDashBoard(username);
     else if (type == "student") studentDasboard(username);
     return 0;

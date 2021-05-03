@@ -28,12 +28,12 @@ public:
 // Functions
 // Login function
 
-typedef struct _SMALL_RECT {
-    SHORT Left;
-    SHORT Top;
-    SHORT Right;
-    SHORT Bottom;
-} SMALL_RECT;
+// typedef struct _SMALL_RECT {
+//     SHORT Left;
+//     SHORT Top;
+//     SHORT Right;
+//     SHORT Bottom;
+// } SMALL_RECT;
 
 
 void Login(string &username, string &type);
@@ -93,4 +93,20 @@ void getData(ifstream &r, courseList * &clist);
 courseList* getCourseList();
 void writeCourseList(courseList* clist);
 courseList* getEnrollC(string username);
+
+// UI
+void setColor(int background_color, int text_color);
+void UIgrid_1_1_Short(string string);
+
+void UIgrid_1_1_Long(string string);
+int UICin(int& n);
+void Loading();
+void UIInput(string label);
+void UIgrid_3_1_Short(string string1, string string2, string string3);
+void UIgrid_3_1_Long(string string1, string string2, string string3);
+void UIgrid_2_1_Short(string string1, string string2);
+void UIgrid_2_1_Long(string string1, string string2);
+void UILineShort();
+void UILineLong();
+void UITitle(string input);
 #endif

@@ -23,7 +23,7 @@ void UIgrid_2_1_Short(string string1, string string2) {
 }
 
 void UIgrid_3_1_Long(string string1, string string2, string string3) {
-    cout << "|" << setw(25) << string1 << setw(25) << string2 << setw(25) << string3 << setw(24) << "|" << flush << endl;
+    cout << "|" << setw(30) << string1 << setw(30) << string2 << setw(30) << string3 << setw(9) << "|" << flush << endl;
 }
 
 void UIgrid_3_1_Short(string string1, string string2, string string3) {
@@ -59,21 +59,13 @@ void UIgrid_1_1_Long(string string) {
 void UIgrid_1_1_Short(string string) {
     cout << "|" << setw(30) << string << setw(29) << "|" << flush << endl;
 }
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
 
-void SetConsoleTitle()
-{
-    SetConsoleTitleA("Learning Management System");
-    cout << "What's your name ?\n";
-    string name{};
-    getline(cin, name);
-    cout << endl;
-    cout << "Hello, " << name << '\n';
-}
+
+// void SetConsoleTitle()
+// {
+//     SetConsoleTitleA("Learning Management System");
+    
+// }
 
 // setColor(0, 10) cho màu xanh, setColor(0, 13) cho màu hồng, setColor(0, 14) cho màu vàng
 void setColor(int background_color, int text_color)
@@ -85,19 +77,16 @@ void setColor(int background_color, int text_color)
 }
 
 // (120, 150)
-void SetWindowSize(SHORT width, SHORT height)
-{
-    HANDLE hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
+// void SetWindowSize(SHORT width, SHORT height)
+// {
+//     HANDLE hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
 
-    SMALL_RECT WindowSize;
-    WindowSize.Top = 0;
-    WindowSize.Left = 0;
-    WindowSize.Right = width;
-    WindowSize.Bottom = height;
+//     SMALL_RECT WindowSize;
+//     WindowSize.Top = 0;
+//     WindowSize.Left = 0;
+//     WindowSize.Right = width;
+//     WindowSize.Bottom = height;
 
-    SetConsoleWindowInfo(hStdout, 1, &WindowSize);
-}
-<<<<<<< Updated upstream
-=======
->>>>>>> 7b179acb293dff4f00a0bb29c6de10a80c0133fb
->>>>>>> Stashed changes
+//     SetConsoleWindowInfo(hStdout, 1, &WindowSize);
+// }
+// >>>>>>> Stashed changes

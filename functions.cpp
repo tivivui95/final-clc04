@@ -8,9 +8,9 @@ void Login(string &username, string &type) {
     {
         // Need UI here
         if (a) cout << "Pls try again.";
-        cout << "username:"; 
+        UIInput("Username: "); 
         cin >> username;
-        cout << "password:";
+		UIInput("Password: ");
         cin >> password;
         a = checkLogin(username, password, type);
     } while (!a);
@@ -50,18 +50,18 @@ void staffDashBoard(string username) {
             getline(infile, temp, ',');
             break;
         }
-    cout << "Welcome " << temp << flush << endl; 
+    UITitle("Welcome " + temp);
     // Add UI
     infile.close();
-    cout << "Choose 1 option:" << endl;
+    UIgrid_1_1_Long("Choose 1 option:");
     ifstream yearlist; int tmp;
     yearlist.open("Data/general/schoolyear.txt");
     yearlist >> tmp; 
     // Add UI
     if (tmp>0) {
-        cout << "1. Create new Schoolyear.\n2. Manage this year.\n";
-    } else cout << "1. Create Schoolyear.\n";
-    
+        UIgrid_2_1_Long("1. Create new Schoolyear.","2. Manage this year");
+    } else UIgrid_1_1_Long("1. Create Schoolyear.");
+    UIInput(">> ");
     cin >> input;
     yearlist.close();
     switch (input)
@@ -81,6 +81,7 @@ void staffDashBoard(string username) {
 }
 
 void createYear() {
+	system("cls");
     ifstream year;
     ofstream temp;
     year.open("Data/general/schoolyear.txt");
@@ -93,7 +94,9 @@ void createYear() {
     while (getline(year, a, '\n'))
     temp << a << endl;
     // Need UI
+	UIInput("K (19, 20, 21, 22...)");
     int n; cin >> n; temp << n << " "; // Need UI
+	UIInput("School year: ");
     cin >> a; temp << a;
     year.close(); temp.close();
     temp.open("Data/general/"+ to_string(n) +"sem.txt");
@@ -102,14 +105,16 @@ void createYear() {
 }
 
 void manageYear() {
-    
+    system("cls");
     string curYear = getCurrentYear();
     fstream infile;
     ofstream outfile;
     string curSem = getCurrentSem(curYear);
     // system("pause");
-    if (curSem == "s1" || curSem == "s2" || curSem == "s3") cout << "1. Create Semester\n2. Manage Current Semester\n3. Manage Classes" << flush;
-    else cout << "1. Create Semester" << flush;
+    if (curSem == "s1" || curSem == "s2" || curSem == "s3") 
+	UIgrid_3_1_Long("1. Create Semester","2. Manage Current Semester","3. Manage Classes");
+    else UIgrid_1_1_Long("1. Create Semester");
+	UIInput(">> ");
     cin >> input;
     switch (input)
     {
