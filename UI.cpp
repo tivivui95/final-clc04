@@ -77,16 +77,15 @@ void setColor(int background_color, int text_color)
 }
 
 // (120, 150)
-// void SetWindowSize(SHORT width, SHORT height)
-// {
-//     HANDLE hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
+void SetWindowSize(SHORT width, SHORT height)
+{
+    HANDLE hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
 
-//     SMALL_RECT WindowSize;
-//     WindowSize.Top = 0;
-//     WindowSize.Left = 0;
-//     WindowSize.Right = width;
-//     WindowSize.Bottom = height;
+    SMALL_RECT WindowSize;
+    WindowSize.Top = 0;
+    WindowSize.Left = 0;
+    WindowSize.Right = width;
+    WindowSize.Bottom = height;
 
-//     SetConsoleWindowInfo(hStdout, 1, &WindowSize);
-// }
-// >>>>>>> Stashed changes
+    SetConsoleWindowInfo(hStdout, 1, &WindowSize);
+}
