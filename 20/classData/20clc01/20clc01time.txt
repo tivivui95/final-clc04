@@ -1,4 +1,0 @@
-ShortName,ID,Name,Teacher,NumofStudent,Day1,Session1,Day2,Session2,TeacherID,
-NMLT,CS0001,Nhap mon lap trinh,Dau Ngoc Ha Duong,48,MON,S1,TUE,S3,dnhduong,
-KNM,K0001,Ky nang mem,Le Thu Thao,48,TUE,S2,THU,S1,ltthao,
-TRR,M0001,Toan roi rac,Aki Le,48,WED,S1,SAT,S3,lvchanh,

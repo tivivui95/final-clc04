@@ -1,2 +1,0 @@
-48 1
-STT ID Name s1 final

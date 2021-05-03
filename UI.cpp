@@ -1,4 +1,4 @@
-#include "Header.h"
+#include "header.h"
 
 void UITitle(string input) {
     UILineLong();
@@ -45,7 +45,7 @@ void Loading() {
         for (int k = 50-i; k > 0; k--) cout << "-";
         cout << "]" << endl; UILineShort(); Sleep(10); system("cls");
     }
-    
+
 }
 
 int UICin(int& n) {
@@ -59,3 +59,45 @@ void UIgrid_1_1_Long(string string) {
 void UIgrid_1_1_Short(string string) {
     cout << "|" << setw(30) << string << setw(29) << "|" << flush << endl;
 }
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+
+void SetConsoleTitle()
+{
+    SetConsoleTitleA("Learning Management System");
+    cout << "What's your name ?\n";
+    string name{};
+    getline(cin, name);
+    cout << endl;
+    cout << "Hello, " << name << '\n';
+}
+
+// setColor(0, 10) cho màu xanh, setColor(0, 13) cho màu hồng, setColor(0, 14) cho màu vàng
+void setColor(int background_color, int text_color)
+{
+    HANDLE hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    int color_code = background_color * 16 + text_color;
+    SetConsoleTextAttribute(hStdout, color_code);
+}
+
+// (120, 150)
+void SetWindowSize(SHORT width, SHORT height)
+{
+    HANDLE hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    SMALL_RECT WindowSize;
+    WindowSize.Top = 0;
+    WindowSize.Left = 0;
+    WindowSize.Right = width;
+    WindowSize.Bottom = height;
+
+    SetConsoleWindowInfo(hStdout, 1, &WindowSize);
+}
+<<<<<<< Updated upstream
+=======
+>>>>>>> 7b179acb293dff4f00a0bb29c6de10a80c0133fb
+>>>>>>> Stashed changes

@@ -1,3 +1,0 @@
-1,Nguyen Khoi Nguyen,20127261,123456789,Nam,08/11/2002
-01,Nguyen Khoi Nguyen,20127261,123456789,Nam,08/11/2002
-20,2020, 202, sfajfn, sgnon, andfn
