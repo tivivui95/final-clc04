@@ -3,8 +3,8 @@ int main(int argc, char* argv[]) {
     SetConsoleTitleA("Learning Management System");
     HWND console = GetConsoleWindow();
 	RECT ConsoleRect;
-	GetWindowRect(console, &ConsoleRect); 
- 
+	GetWindowRect(console, &ConsoleRect);
+
     MoveWindow(console, ConsoleRect.left, ConsoleRect.top, 842, 450, TRUE);
     // Setting Vietnamese, don't change
     SetConsoleOutputCP(CP_UTF8);
@@ -39,9 +39,9 @@ void addtoSNode(stringNode*& head, string add) {
     // if (Temp=nullptr) Temp = new stringNode;
     Temp = new stringNode;
     Temp->data = add;
-    cout << Temp->data;
+
     Temp->index = i + 1;
-    cout << " " << Temp->index << " ";
+
     Temp->next = nullptr;
 }
 
@@ -73,7 +73,7 @@ string currentTime() {
 void displaycList(courseList* cL) {
     while (cL != nullptr)
     {
-        cout << cL->id << " " << cL->name << endl;
+        UIgrid_2_1_Long(cL->id, cL->name);
         cL = cL->next;
     }
 }
@@ -82,7 +82,7 @@ void getData(ifstream& r, courseList*& clist) {
     string temp;
     clist = new courseList;
     courseList* cur = clist;
-    // r.ignore(100,'\n');  
+    // r.ignore(100,'\n');
     while (getline(r, cur->id, ',')) {
         getline(r, cur->name, ',');
         // cout << "ID:" << cur->id << endl;
