@@ -59,6 +59,11 @@ void UIgrid_1_1_Long(string string) {
 void UIgrid_1_1_Short(string string) {
     cout << "|" << setw(30) << string << setw(29) << "|" << flush << endl;
 }
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 
 void SetConsoleTitle()
 {
@@ -92,3 +97,7 @@ void SetWindowSize(SHORT width, SHORT height)
 
     SetConsoleWindowInfo(hStdout, 1, &WindowSize);
 }
+<<<<<<< Updated upstream
+=======
+>>>>>>> 7b179acb293dff4f00a0bb29c6de10a80c0133fb
+>>>>>>> Stashed changes
