@@ -1,5 +1,4 @@
 #include "Header.h"
-
 void studentDashboard(Node* head, fstream &student,fstream &lop, Student info, int choice)
 {
 	student.open("student.txt",ios :: out);
