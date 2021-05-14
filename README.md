@@ -1,16 +1,6 @@
-# Final CLC04
-Final for KTLT CLC04
+# Learning Management System by C++ with simple UI
+This code was built by 100% C++ programming. You can use it to manage your school, with easy setup steps.
 
-# Jobs
-- Login - Done!
-
-## Mvan
--NavBar - In-process
-
-## Hung
--Edit Classess - done
-
-## Nguyen
-
-## Tuan
-- Enroll - In-process
+# How to use
+There are 2 types of user: staff and student. Staff can create, remove everything in this app. Students are managed by staff with restricted access.
+Login by username and password. Each type would be redirected to its main dashboard. All features would be there. Press 0 to exit.
