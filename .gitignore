@@ -49,3 +49,8 @@ obj/
 # jobs.*
 *.cbp
 *.cscope_file_list
+
+# Edit
+
+*.pdf
+*.xlsx

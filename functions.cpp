@@ -416,6 +416,7 @@ void manageClass() {
     case 2:
         editClasses();
     case 3:
+        
         caculateGPA();
     default:
         break;
@@ -427,6 +428,8 @@ void caculateGPA() {
     ofstream save, w;
     int sum = 0;
     string temp, id, search;
+    UIgrid_1_1_Long("Choosse class: ");
+        UIInput(">>"); cin >> temp;
     classes.open("Data/general/class.txt");
     while (getline(classes, temp, ' '))
     {

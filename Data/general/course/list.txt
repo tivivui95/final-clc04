@@ -1,2 +1,2 @@
 c01,mnlt,dbt,3,12,2,3,2,4,
-c02,trr,ntv,2,33,2,4,3,5,
+CS01,Nhap Mon Lap Trinh,Dinh Ba Tien,4,30,2,3,3,2,
