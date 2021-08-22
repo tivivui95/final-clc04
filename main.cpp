@@ -102,6 +102,7 @@ void getData(ifstream& r, courseList*& clist) {
     if (cur->max == 0) cur = nullptr;
 }
 
+
 courseList* getCourseList() {
     ifstream r;
     r.open("Data/general/course/list.txt");
